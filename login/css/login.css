@@ -4,28 +4,32 @@
 	font-family: century gothic;
 	text-align: center;
 }
-
-form {
-	padding: 50px 20px;
-	background-color: #381b1ba6;
-	margin-left: 30%;
-	margin-right: 30%;
-	margin-top: 40px;
-	padding-top: 28px;
+body{
+	background-image:url(../IMG/fondolegal.jpg);
+	width: 100%;
+	height: 100%;
+	background-size: cover;
+}
+h1 {
+	color: rgb(206, 203, 203);;
+}
+.caja {
+	padding: 35px 30px;
+	background-color: #1a0c0ca9;
+	margin: auto;
 	margin-bottom: 30px;
 }
-
-h1 {
-	text-align: center;
-	padding: 12px;
-	color: rgb(206, 203, 203);
-}
-
-input {
-	width: calc(100% - 20px);
-	padding: 9px;
+.caja2 {
+	padding: 35px 30px;
+	background-color: #1a0c0ca9;
 	margin: auto;
+	margin-top: 35px;
+}
+input[type="text"], input[type="email"], input[type="password"] {
+	width: calc(100% - 20px);
+	padding: 10px;
 	margin-top: 12px;
+	margin-bottom: 10px;
 	font-size: 16px;
 }
 .ok {
@@ -42,16 +46,9 @@ input {
 	background-color: #a22;
 	color: #fff;
 }
-.blanco{
- color: white;
- text-align: center;
-}
-body{
-	background-image:url(../IMG/fondolegal.jpg);
-	width: 100%;
-	height: 100%;
-	background-size: cover;
-	color:white;	
+label, span{
+	font-size: 18px;
+	color: white;
 }
 .mensaje{
 	width: 100%;
@@ -62,15 +59,9 @@ body{
 	padding: 6px;
 	color: red;
 }
-h6 {
-	text-align: center;
-	padding: 12px;
-    color: rgb(206, 203, 203);
-    line-height: 20px;
-}
-.gabo{
+/*.gabo{
 	padding: 50px 20px;
-	background-color: #381b1ba6;
+	background-color: #381b1baf;
 	margin: calc(25% + 100px);
 	margin-top: 70px;
 	padding-top: 28px;
@@ -85,13 +76,6 @@ header{
     align-items: center;
     align-content: space-between;
     background-color: rgba(0, 0, 0,.3);
-}
-header h1{
-    margin-left: 5px;
-    align-items: center;
-    width: calc(20% - 100px);
-    font-family: montez;
-    font-size: 55px;
 }
 header a{
     margin-right: 30px;
@@ -109,7 +93,7 @@ header a{
 	position: absolute;
 	top: -50px;
 	left: calc(50% - 50px);
-}
+} Codigo comentado porque nose que intentaron hacer :D */ 
 .logogps{
 	position: absolute;
 	top: 1%;
@@ -127,33 +111,24 @@ header a{
 	margin-top: 10rem;	
 }
 .register {
-	background-color: rgb(23, 123, 76);
+	width: 100%;
+	padding: 10px;
+	background-color: #0a884d;
 	color: white;
 	margin-top: 10px;
+	font-size: 18px;
 	border: 0px;
 	border-radius: 5px;
 }
 .register:hover {
 	background-color: #146c43;
 }
-input[type="submit"]{
-	
-}
 @media screen and (min-width:800px) and (max-width:1920px){
-	form {
+	.caja {
 		width: 760px;
-		padding: 50px 20px;
-		background-color: #381b1ba6;
-		margin: auto;
-		padding-top: 28px;
-		margin-bottom: 30px;
 	}
-	input {
-		width: calc(100% - 20px);
-		padding: 10px;
-		margin: auto;
-		margin-top: 12px;
-		font-size: 16px;
+	.caja2 {
+		width: 760px;
 	}
 	body{
 		background-image:url(../IMG/fondolegal.jpg);
@@ -161,24 +136,11 @@ input[type="submit"]{
 		max-height: 200%;
 		background-attachment: fixed; 
 		background-repeat: no-repeat;
-		color:white;
-		
-	}
-	header h1{
-		margin-left: 10px;
-		align-items: center;
-		width: calc(20% - 100px);
-		font-family: montez;
-		font-size: 80px;
+		color:white;	
 	}
 }
 @media screen and (min-width:479px) and (max-width:800px){
-	form {
-		width: 440px;
-		padding: 50px 20px;
-		background-color: #381b1ba6;
-		margin: auto;
-		padding-top: 28px;
-		margin-bottom: 30px;
+	.caja, .caja2 {
+		width: 459px;
 	}
 }
