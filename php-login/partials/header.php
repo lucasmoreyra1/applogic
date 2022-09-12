@@ -1,3 +1,4 @@
 <header>
-    <a href="/php-login">UBITEC</a>
+    <div class="logogps"></div>
+    <a href="/php-login">Ubitech</a>
 </header>

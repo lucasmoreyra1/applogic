@@ -30,12 +30,11 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>LOGIN</title>
+        <title>Login</title>
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;1,700&display=swap" rel="stylesheet">
         <link rel="Stylesheet" href="assets/css/style.css">
-
     </head>
 
     <body>
@@ -47,14 +46,15 @@
         <?php
             require 'partials/header.php';
         ?>
-        <h1>Entrar</h1>
-        <span>o <a href="signup.php">Registrarse</a> </span>
-
-        <form action="login.php" method="post" >
+        <form class="caja" action="login.php" method="post" >
+            <h1>Iniciar Sesion</h1>
             <input type="text" name="email" placeholder="Ingrese su email">
             <input type="password" name="password" placeholder="Ingrese su contraseña">
-            <input type="submit" value="send">
-
+            <input type="submit" value="Send">
+            </br>
+            <a href="../php-login/signup.php">
+                <input type="button" value="Registrarse">
+            </a>
         </form>
 
     </body>
