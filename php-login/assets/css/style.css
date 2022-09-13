@@ -8,7 +8,9 @@ body {
     background-size: 100% 100%;
 }
 .logogps {
-    margin: 0 auto;
+    position: absolute;
+    top: 1%;
+    left: 32%;
 	background-image: url("../css/gps.gif");
 	background-size: 100% 100%;
 	width: 130px;
@@ -21,8 +23,7 @@ h1 {
     width: 790px;
 	padding: 15px 15px 30px 15px;
 	background-color: #1a0c0ca9;
-	margin: auto;
-	margin-top: 20px;
+	margin: 20px auto;
 }
 input[type="text"], input[type="password"]{
     width: calc(100% - 80px);
@@ -53,7 +54,7 @@ input[type="submit"]:hover, input[type="button"]:hover{
 }
 header{
     border-bottom: 2px solid #eee;
-    padding: 15px 0 10px 0;
+    padding: 35px 0 10px 0;
     margin-bottom: 10px;
     width: 100%;
     font-family: comic sans MS;
