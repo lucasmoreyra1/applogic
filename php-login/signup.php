@@ -46,7 +46,7 @@
         <?php endif; ?>
 
 
-        <form action="signup.php" method="post" >
+        <form class="caja" action="signup.php" method="post" >
             <h1>Registrarse</h1>
             <input type="text" name="nickname" placeholder="Ingrese su nombre de usuario">
             <input type="text" name="email" placeholder="Ingrese su email">
