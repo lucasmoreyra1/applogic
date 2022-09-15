@@ -14,27 +14,23 @@
 
         if($stmt->execute()){
             $message = 'susesfully created user';
-        }else{
-            $message = "an error has been ocurred";
+        }
+        else{
+            $message = 'an error has been ocurred';
         }
     }
 ?>
-
 
 <!DOCTYPE html>
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>UBITEC</title>
+        <title>Registro</title>
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;1,700&display=swap" rel="stylesheet">
         <link rel="Stylesheet" href="assets/css/style.css">
-        
-
     </head>
-
-
     <body>
 
         <?php
@@ -45,19 +41,16 @@
             <p><?= $message ?></p>
         <?php endif; ?>
 
-
-        <form class="caja" action="signup.php" method="post" >
+        <form class="caja" action="signup.php" method="POST">
             <h1>Registrarse</h1>
             <input type="text" name="nickname" placeholder="Ingrese su nombre de usuario">
             <input type="text" name="email" placeholder="Ingrese su email">
             <input type="password" name="password" placeholder="Ingrese su contraseña">
             <input type="password" name="_confirm_password" placeholder="confirme su contraseña">
-            <input type="submit" value="Crear usuaurio">
-            <a href="login.php">
+            <input type="submit" value="Crear usuario">
+            <a href="../php-login/login.php">
                 <input type="button" value="Logearse">
             </a>
         </form>
-
     </body>
-
 </html>

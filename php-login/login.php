@@ -24,8 +24,6 @@
     }
 ?>
 
-
-
 <!DOCTYPE html>
 <html>
     <head>
@@ -36,7 +34,6 @@
         <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;1,700&display=swap" rel="stylesheet">
         <link rel="Stylesheet" href="assets/css/style.css">
     </head>
-
     <body>
 
         <?php if(!empty($message)): ?>
