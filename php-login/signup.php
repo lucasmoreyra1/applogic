@@ -45,15 +45,18 @@
         <?php endif; ?>
 
 
-        <h1>Registrarse</h1>
         <span>o <a href="login.php">Entrar</a> </span>
 
         <form action="signup.php" method="post" >
+            <h1>Registrarse</h1>
             <input type="text" name="nickname" placeholder="Ingrese su nombre de usuario">
             <input type="text" name="email" placeholder="Ingrese su email">
             <input type="password" name="password" placeholder="Ingrese su contraseña">
             <input type="password" name="_confirm_password" placeholder="confirme su contraseña">
-            <input type="submit" value="Send">
+            <input type="submit" value="Crear usuaurio">
+            <a href="login.php">
+                <input type="button" value="Logearse">
+            </a>
         </form>
 
     </body>
