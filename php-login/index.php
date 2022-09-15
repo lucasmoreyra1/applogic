@@ -26,6 +26,26 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;1,700&display=swap" rel="stylesheet">
         <link rel="Stylesheet" href="assets/css/style.css">
+        <style>
+        .direccion{
+            text-align: center;
+            margin: 50px;
+        }
+        input[type="text"]{
+            margin: 10px auto;
+            height: 30px;
+        }
+        table{
+            background: white;
+            border: 1px solid black;
+            width: 500px;
+            margin: auto;
+        }
+        th,td{
+            border: 1px solid black;
+            text-align: center;
+        }
+        </style>
     </head>
     <body>
 
@@ -37,11 +57,17 @@
             <br><p>Welcome</p>
             <br>
             <p>you are sussesfully loged in</p>
-        <div>  
+            <a href="logout.php">logoout</a>
+        <?php else: ?>
+            <h1>Por favor entre o registrese para continuar</h1>
+            <a  href="login.php">Entrar</a> o
+            <a  href="signup.php">Registrarse</a>
+        <?php endif ?>
+
+        <div class="direccion">  
             <input type="text" id="id" placeholder="Por favor ingrese la direccion">
             <input type="button" id="add" value="Añadir">
         </div>
-
         <table>
             <caption>Formulario de información del estudiante</caption>
             <tr>
@@ -95,13 +121,6 @@
                 table_node.removeChild(obj.parentNode.parentNode);
             }
         </script>
-            <a href="logout.php">logoout</a>
-        <?php else: ?>
-            <h1>Por favor entre o registrese para continuar</h1>
-            <a  href="login.php">Entrar</a> o
-            <a  href="signup.php">Registrarse</a>
-        <?php endif ?>
 
     </body>
-
 </html>
