@@ -1,4 +1,4 @@
 <header>
     <div class="logogps"></div>
-    <a href="/php-login">Ubitech</a>
+    <a href="/php-login">Ubitec</a>
 </header>
