@@ -30,6 +30,7 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;1,700&display=swap" rel="stylesheet">
         <link rel="Stylesheet" href="assets/css/style.css">
+        
 
     </head>
 
@@ -44,8 +45,6 @@
             <p><?= $message ?></p>
         <?php endif; ?>
 
-
-        <span>o <a href="login.php">Entrar</a> </span>
 
         <form action="signup.php" method="post" >
             <h1>Registrarse</h1>
