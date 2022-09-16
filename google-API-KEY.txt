@@ -1,0 +1,5 @@
+IMPORTANTE!!! Usar solo para el proyecto porque la api key tiene un limite de consultas 
+
+AIzaSyDGc0UBAR_Y30fX31EvaU65KATMx0c0ItI
+
+se puede usar para cualquier consulta de geolocalizacion a la api de google maps, sirve tanto para mapas como para obtener coordendas
