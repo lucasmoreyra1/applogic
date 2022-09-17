@@ -20,10 +20,9 @@ h1 {
 }
 .caja {
     width: 790px;
-	padding: 15px 15px 30px 15px;
+	padding: 15px;
 	background-color: #1a0c0ca9;
-	margin: auto;
-	margin-top: 20px;
+	margin: 20px auto;
 }
 input[type="text"], input[type="password"]{
     width: calc(100% - 80px);
@@ -73,8 +72,22 @@ header a{
     75% {color: #0ae7d5;}
     100% {color: #0059ff;}
     }
-@media screen and (min-width:479px) and (max-width:800px){
+@media screen and (min-width:650px) and (max-width:1024px){
+    .caja {
+        width: 640px;
+    }
+    .logogps {
+        width: 90px;
+        height: 90px;
+    }
+}
+@media screen and (min-width:489px) and (max-width:650px){
 	.caja {
-		width: 459px;
+		width: 439px;
+        height: auto;
 	}
+    .logogps {
+        width: 70px;
+        height: 70px;
+    }
 }

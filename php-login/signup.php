@@ -13,10 +13,10 @@
         $stmt->bindParam(':password', $password);
 
         if($stmt->execute()){
-            $message = 'susesfully created user';
+            $message = 'Susesfully created user.';
         }
         else{
-            $message = 'an error has been ocurred';
+            $message = 'Error creating user.';
         }
     }
 ?>

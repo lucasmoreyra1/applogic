@@ -28,18 +28,17 @@
         <link rel="Stylesheet" href="assets/css/style.css">
         <style>
         .direccion{
-            text-align: center;
-            margin: 50px;
-        }
-        input[type="text"]{
-            margin: 10px auto;
-            height: 30px;
+            margin: 0px 15px;
         }
         table{
-            background: white;
+            background-color: white;
             border: 1px solid black;
             width: 500px;
-            margin: auto;
+            margin: 10px auto;
+        }
+        caption {
+            background-color: #1a0c0ca9;
+            color: white;
         }
         th,td{
             border: 1px solid black;
@@ -52,23 +51,22 @@
         <?php
             require 'partials/header.php';
         ?>
+
         <article class="caja">
-
-        <?php if(!empty($user)): ?>
-            <br><p>Welcome</p>
-            <br>
-            <p>you are sussesfully loged in</p>
-            <a href="logout.php">logoout</a>
-        <?php else: ?>
-            <h1>Por favor entre o registrese para continuar</h1>
-            <a  href="login.php">Entrar</a> o
-            <a  href="signup.php">Registrarse</a>
-        <?php endif ?>
-
-        <div class="direccion">  
-            <input type="text" id="id" placeholder="Por favor ingrese la direccion">
-            <input type="button" id="add" value="Añadir">
-        </div>
+            <?php if(!empty($user)): ?>
+                <br><p>Welcome</p>
+                <br>
+                <p>you are sussesfully loged in</p>
+                <a href="logout.php">logoout</a>
+            <?php else: ?>
+                <h1>Por favor entre o registrese para continuar</h1>
+                <a href="login.php"><input type="button" value="Logearse"></a>
+                <a href="signup.php"><input type="button" value="Registrarse"></a>
+            <?php endif ?>
+            <div class="direccion">  
+                <input type="text" id="id" placeholder="Por favor ingrese la direccion">
+                <input type="button" id="add" value="Añadir">
+            </div>
         </article>
         <table>
             <caption>Formulario de información del estudiante</caption>
