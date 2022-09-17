@@ -52,6 +52,7 @@
         <?php
             require 'partials/header.php';
         ?>
+        <article class="caja">
 
         <?php if(!empty($user)): ?>
             <br><p>Welcome</p>
@@ -68,6 +69,7 @@
             <input type="text" id="id" placeholder="Por favor ingrese la direccion">
             <input type="button" id="add" value="Añadir">
         </div>
+        </article>
         <table>
             <caption>Formulario de información del estudiante</caption>
             <tr>
