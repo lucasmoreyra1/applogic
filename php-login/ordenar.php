@@ -24,14 +24,34 @@
                 }
 
             }
+            
+
+            foreach ($coords as $key => $row) {
+                $orden1[$key] = $row['1'];
+                $orden2[$key] = $row['2'];
+            }
+        if(!empty($_SESSION['data'])){
+            array_multisort($orden1, SORT_ASC, $orden2, SORT_ASC, $coords);
+        
+            foreach ($coords as $key => $row) {
+                echo $row['0'].' '.$row['1'].' '.$row['2']. '<br/>';
+            }
+
+        }
 
 
 
-        $aDistancia = array();
-        for($var = 0; $var < count($coords); $var++){
-            $temp = distance(-33.358439, -60.201501 , $coords[$var][1], $coords[$var][2], "K");
+/*         $aDistancia = array();
+        $menor = array($coords[0]);
+        
+        for($var = 1; $var < count($coords); $var++){
+            
+            if($coords[$var][1] < $menor[1]){
+                $menor = $coords[$var][1]
+            }
+
             array_push($aDistancia, array($coords[$var][0], $temp));
         }
 
-        print_r($coords);
+        print_r($coords); */
 ?>
