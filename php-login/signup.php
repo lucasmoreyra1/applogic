@@ -13,10 +13,10 @@
         $stmt->bindParam(':password', $password);
 
         if($stmt->execute()){
-            $message = 'Susesfully created user.';
+            $message = 'susesfully created user';
         }
         else{
-            $message = 'Error creating user.';
+            $message = 'an error has been ocurred';
         }
     }
 ?>
@@ -48,8 +48,8 @@
             <input type="password" name="password" placeholder="Ingrese su contraseña">
             <input type="password" name="_confirm_password" placeholder="confirme su contraseña">
             <input type="submit" value="Crear usuario">
-            <a href="../php-login/login.php">
-                <input type="button" value="Logearse">
+            <a href="/php-login/login.php">
+                <input type="button" value="Entrar">
             </a>
         </form>
     </body>
