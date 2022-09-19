@@ -101,7 +101,49 @@
             <a  href="login.php">Entrar</a> o
             <a  href="signup.php">Registrarse</a>
         <?php endif ?>
+        
+        
+        
+        
+        <!--Reloj v1, solo se activa al cargar la pagina-->
+        
+        
+        <div>
+      <div class="tiempo" id="tiempo">0:00:00</div>
+      </div>
 
+        <script>
+
+      let tiempoRef = Date.now()
+      let cronometrar = true
+      let acumulado = 0
+
+
+
+      setInterval(() => {
+          let tiempo = document.getElementById("tiempo")
+          if (cronometrar) {
+              acumulado += Date.now() - tiempoRef
+          }
+          tiempoRef = Date.now()
+          tiempo.innerHTML = formatearMS(acumulado)
+      }, 10 / 60);
+
+      function formatearMS(tiempo_ms) {
+          let MS = tiempo_ms % 1
+          
+          let St = Math.floor(((tiempo_ms - MS) / 1000))
+          
+          let S = St%60
+          let M = Math.floor((St / 60) % 60)
+          let H = Math.floor((St/60 / 60))
+          Number.prototype.ceros = function (n) {
+              return (this + "").padStart(n, 0)
+          }
+
+          return H.ceros(1) + ":" + M.ceros(2) + ":" + S.ceros(2)
+      }
+    </script>
 
 
     </body>
