@@ -8,12 +8,12 @@ body {
     background-size: 100% 100%;
 }
 .logogps {
-	background-image: url("../css/gps.gif");
+	background-image: url("../css/logoubitec.gif");
 	background-size: 100% 100%;
     display: inline-block;
-    margin-left: -200px;
-	width: 130px;
-	height: 130px;
+	margin-left: -700px;
+	width: 110px;
+	height: 110px;
 }
 h1 {
 	color: rgb(206, 203, 203);
@@ -22,15 +22,15 @@ h1 {
     width: 790px;
 	padding: 15px 15px 30px 15px;
 	background-color: #1a0c0ca9;
-	margin: auto;
-	margin-top: 20px;
+	border-radius: 20px;
+	margin: 20px auto;
 }
 input[type="text"], input[type="password"]{
     width: calc(100% - 80px);
     outline: none;
     padding: 20px;
     display: block;
-    border-radius: 3px;
+    border-radius: 10px;
     border: 1px soled #eee;
     margin: 20px auto;
 }
@@ -43,7 +43,7 @@ input[type="submit"], input[type="button"]{
     width: calc(100% - 40px);
     margin: 5px;
     border: 0;
-    border-radius: 3px;
+    border-radius: 10px;
     cursor: pointer;
     transition: .3s;
 }
@@ -53,28 +53,41 @@ input[type="submit"]:hover, input[type="button"]:hover{
     transition: .3s;
 }
 header {
-    border-bottom: 2px solid #eee;
+    border-bottom: 4px solid #1a0c0ca9;
     padding: 10px 0 5px 0;
     width: 100%;
     font-family: comic sans MS;
     font-style: italic;
-    font-size: 60px;
+    font-size: 40px;
+	text-shadow: 4px 4px 4px black;
     font-weight: bold;
     text-align: center;
 }
-
 header a{
     text-decoration: none;
-    animation: animates 3s infinite;
+    animation: animate 3s infinite;
 }
-@keyframes animates{
-    25% {color:#e10000;}
-    50% {color: #dd7e12;}
-    75% {color: #0ae7d5;}
-    100% {color: #0059ff;}
-    }
-@media screen and (min-width:479px) and (max-width:800px){
+@keyframes animate{
+	0% {color: #8a9597;}
+	33% {color: #191919;}
+    66% {color: gray;}
+    100% {color: white;}
+}
+@media screen and (min-width:645px) and (max-width:1025px){
 	.caja {
-		width: 459px;
+		width: 640px;
+	}
+	.logogps {
+		width: 70px;
+		height: 70px;
+	}
+}
+@media screen and (min-width:489px) and (max-width:645px){
+	.caja {
+		width: 439px;
+	}
+	.logogps {
+		width: 50px;
+		height: 50px;
 	}
 }

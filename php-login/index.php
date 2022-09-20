@@ -17,9 +17,7 @@
             $user = $results;
         }
     }
-
-
-
+	
         require 'partials/partial.php';//guarda los datos de las direcciones
 
         require 'partials/mostrar-array.php';//procesado para guardar datos
@@ -38,12 +36,10 @@
         <link rel="Stylesheet" href="assets/css/style.css">
         <style>
         .direccion{
-            text-align: center;
-            margin: 50px;
+            margin: 20px;
         }
         input[type="text"]{
-            margin: 10px auto;
-            height: 30px;
+            height: 15px;
         }
         table{
             background: white;
@@ -67,44 +63,33 @@
             <br><p>Welcome</p>
             <br>
             <p>you are sussesfully loged in</p>
-
-
-            <form method="post">
-                <div class="form-group">
-                    <div class="direccion">
-                        <input type="text" name="searchAddress" id="id" placeholder="Por favor ingrese la direccion">
-                        <input type="hidden" name="valores" value="<?php echo implode(",", $_SESSION['data']); ?>">
-                        <input type="submit" id="add" value="Añadir">
-                    </div>
+            <a href="logout.php">logoout</a>
+        <?php else: ?>
+		<article class="caja">
+            <h1>Por favor entre o registrese para continuar</h1>
+            <a href="login.php"><input type="button" value="Logearse"></a>
+            <a href="signup.php"><input type="button" value="Registrarse"></a>
+        <?php endif ?>
+        
+        <form method="post">
+            <div class="form-group">
+                <div class="direccion">
+                    <input type="text" name="searchAddress" id="id" placeholder="Por favor ingrese la direccion">
+                    <input type="hidden" name="valores" value="<?php echo implode(",", $_SESSION['data']); ?>">
+                    <input type="submit" id="add" value="Añadir">
                 </div>
-
-            </form>
-
-
-
-                <table>
+            </div>
+        </form>
+		</article>
+				<table>
                     <?php
                         echo count($valores);
                         for($var=0; $var < count($valores); $var++){ ?>
-                            <?php  echo "<tr><td>"; echo $valores[$var]; echo "</td></tr>"?>
+                        <?php  echo "<tr><td>"; echo $valores[$var]; echo "</td></tr>"?>
                     <?php
                         }
                     ?>
-
                 </table>
-
-
-
-            <a href="logout.php">logoout</a>
-        <?php else: ?>
-            <h1>Por favor entre o registrese para continuar</h1>
-            <a  href="login.php">Entrar</a> o
-            <a  href="signup.php">Registrarse</a>
-        <?php endif ?>
-        
-        
-        
-        
         <!--Reloj v1, solo se activa al cargar la pagina-->
         
         
