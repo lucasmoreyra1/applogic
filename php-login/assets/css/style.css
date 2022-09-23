@@ -10,10 +10,9 @@ body {
 .logogps {
 	background-image: url("../css/logoubitec.gif");
 	background-size: 100% 100%;
-    display: inline-block;
-	margin-left: -700px;
-	width: 110px;
-	height: 110px;
+	margin-left: 1%;
+	width: 100px;
+	height: 100px;
 }
 h1 {
 	color: rgb(206, 203, 203);
@@ -56,15 +55,12 @@ header {
     border-bottom: 4px solid #1a0c0ca9;
     padding: 10px 0 5px 0;
     width: 100%;
-    font-family: comic sans MS;
-    font-style: italic;
-    font-size: 40px;
-	text-shadow: 4px 4px 4px black;
-    font-weight: bold;
-    text-align: center;
+    font-family: thertole;
+    font-size: 60px;
+	text-shadow: 4px 4px 4px #07c22f;
 }
-header a{
-    text-decoration: none;
+header span{
+    margin-left: 100%;
     animation: animate 3s infinite;
 }
 @keyframes animate{
@@ -72,6 +68,10 @@ header a{
 	33% {color: #191919;}
     66% {color: gray;}
     100% {color: white;}
+}
+@font-face{
+    font-family: thertole;
+    src: url("../css/Thertole.otf");
 }
 @media screen and (min-width:645px) and (max-width:1025px){
 	.caja {
