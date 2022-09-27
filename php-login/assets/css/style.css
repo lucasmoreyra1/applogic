@@ -1,18 +1,23 @@
-body {
+.fondo1 {
     margin: 0;
     padding: 0;
     font-family: 'Open Sans', sans-serif;
-    text-align: center;
+    /* text-align: center; */
     background-image: url("../css/fondolegal.jpg");
     background-attachment: fixed;
     background-size: 100% 100%;
 }
+/* .fondo {
+	margin: 0;
+    padding: 0;
+	background-color: none;
+} */
 .logogps {
 	background-image: url("../css/logoubitec.gif");
 	background-size: 100% 100%;
 	margin-left: 1%;
-	width: 100px;
-	height: 100px;
+	width: 110px;
+	height: 110px;
 }
 h1 {
 	color: rgb(206, 203, 203);
@@ -23,12 +28,27 @@ h1 {
 	background-color: #1a0c0ca9;
 	border-radius: 20px;
 	margin: 20px auto;
+	text-align: center;
+}
+.caja2 {
+    width: 790px;
+	padding: 15px 15px 30px 15px;
+	background-color: black;
+	border-radius: 20px;
+	margin: 20px;
+	color: white;
+	text-align: center;
+}
+#map {
+	position: relative;
+	right: 0px;
+    height: 515px;
+    width: 380px;
 }
 input[type="text"], input[type="password"]{
-    width: calc(100% - 80px);
+    width: 78%;
     outline: none;
     padding: 20px;
-    display: block;
     border-radius: 10px;
     border: 1px soled #eee;
     margin: 20px auto;
@@ -39,28 +59,34 @@ input[type="submit"], input[type="button"]{
     color: #fff;
     font-size: 18px;
 	background-color: #0a884d;
-    width: calc(100% - 40px);
-    margin: 5px;
+    width: 82%;
+    margin: 5px 0px;
     border: 0;
     border-radius: 10px;
     cursor: pointer;
     transition: .3s;
 }
-
 input[type="submit"]:hover, input[type="button"]:hover{
     background-color: #146c43;
     transition: .3s;
+}
+.boton input, #add {
+	background-color: red;
+	margin-left: 0%;
+}
+.boton input:hover, #add:hover {
+	background-color: #820000;
 }
 header {
     border-bottom: 4px solid #1a0c0ca9;
     padding: 10px 0 5px 0;
     width: 100%;
     font-family: thertole;
-    font-size: 60px;
+    font-size: 50px;
 	text-shadow: 4px 4px 4px #07c22f;
 }
 header span{
-    margin-left: 100%;
+	margin-left: 100%;
     animation: animate 3s infinite;
 }
 @keyframes animate{
@@ -69,22 +95,43 @@ header span{
     66% {color: gray;}
     100% {color: white;}
 }
-@font-face{
-    font-family: thertole;
-    src: url("../css/Thertole.otf");
+@font-face {
+	font-family: thertole;
+	src: url("../css/Thertole.otf");
 }
-@media screen and (min-width:645px) and (max-width:1025px){
+@media screen and (min-width:660px) and (max-width:1025px){
+	.caja2 {
+		width: 440px;
+	}
+	
 	.caja {
-		width: 640px;
+		width: 560px;
 	}
 	.logogps {
 		width: 70px;
 		height: 70px;
 	}
 }
-@media screen and (min-width:489px) and (max-width:645px){
+@media screen and (min-width:320px) and (max-width:660px) and (orientation:portrait){
+	body {
+		background-image: url("../css/fondolegal.jpg");
+		background-attachment: fixed;
+		background-size: 100%;
+	}
+	header {
+		border-bottom: none;
+	}
+	h1 {
+		margin-bottom: 0;
+	}
 	.caja {
-		width: 439px;
+		background-color: #1a0c0ca9;
+		width: 93.8%;
+		margin: 0px;
+		border-radius: 0px;
+	}
+	.caja input {
+		margin-top: 1%;
 	}
 	.logogps {
 		width: 50px;
