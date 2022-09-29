@@ -1,23 +1,19 @@
-.fondo1 {
+body {
     margin: 0;
     padding: 0;
     font-family: 'Open Sans', sans-serif;
-    /* text-align: center; */
+    text-align: center;
     background-image: url("../css/fondolegal.jpg");
     background-attachment: fixed;
     background-size: 100% 100%;
 }
-/* .fondo {
-	margin: 0;
-    padding: 0;
-	background-color: none;
-} */
 .logogps {
-	background-image: url("../css/logoubitec.gif");
+	background-image: url("../css/gps.gif");
 	background-size: 100% 100%;
-	margin-left: 1%;
-	width: 110px;
-	height: 110px;
+    display: inline-block;
+    margin-left: -200px;
+	width: 130px;
+	height: 130px;
 }
 h1 {
 	color: rgb(206, 203, 203);
@@ -26,30 +22,15 @@ h1 {
     width: 790px;
 	padding: 15px 15px 30px 15px;
 	background-color: #1a0c0ca9;
-	border-radius: 20px;
-	margin: 20px auto;
-	text-align: center;
-}
-.caja2 {
-    width: 790px;
-	padding: 15px 15px 30px 15px;
-	background-color: black;
-	border-radius: 20px;
-	margin: 20px;
-	color: white;
-	text-align: center;
-}
-#map {
-	position: relative;
-	right: 0px;
-    height: 515px;
-    width: 380px;
+	margin: auto;
+	margin-top: 20px;
 }
 input[type="text"], input[type="password"]{
-    width: 78%;
+    width: calc(100% - 80px);
     outline: none;
     padding: 20px;
-    border-radius: 10px;
+    display: block;
+    border-radius: 3px;
     border: 1px soled #eee;
     margin: 20px auto;
 }
@@ -59,82 +40,41 @@ input[type="submit"], input[type="button"]{
     color: #fff;
     font-size: 18px;
 	background-color: #0a884d;
-    width: 82%;
-    margin: 5px 0px;
+    width: calc(100% - 40px);
+    margin: 5px;
     border: 0;
-    border-radius: 10px;
+    border-radius: 3px;
     cursor: pointer;
     transition: .3s;
 }
+
 input[type="submit"]:hover, input[type="button"]:hover{
     background-color: #146c43;
     transition: .3s;
 }
-.boton input, #add {
-	background-color: red;
-	margin-left: 0%;
-}
-.boton input:hover, #add:hover {
-	background-color: #820000;
-}
 header {
-    border-bottom: 4px solid #1a0c0ca9;
+    border-bottom: 2px solid #eee;
     padding: 10px 0 5px 0;
     width: 100%;
-    font-family: thertole;
-    font-size: 50px;
-	text-shadow: 4px 4px 4px #07c22f;
+    font-family: comic sans MS;
+    font-style: italic;
+    font-size: 60px;
+    font-weight: bold;
+    text-align: center;
 }
-header span{
-	margin-left: 100%;
-    animation: animate 3s infinite;
+
+header a{
+    text-decoration: none;
+    animation: animates 3s infinite;
 }
-@keyframes animate{
-	0% {color: #8a9597;}
-	33% {color: #191919;}
-    66% {color: gray;}
-    100% {color: white;}
-}
-@font-face {
-	font-family: thertole;
-	src: url("../css/Thertole.otf");
-}
-@media screen and (min-width:660px) and (max-width:1025px){
-	.caja2 {
-		width: 440px;
-	}
-	
+@keyframes animates{
+    25% {color:#e10000;}
+    50% {color: #dd7e12;}
+    75% {color: #0ae7d5;}
+    100% {color: #0059ff;}
+    }
+@media screen and (min-width:479px) and (max-width:800px){
 	.caja {
-		width: 560px;
-	}
-	.logogps {
-		width: 70px;
-		height: 70px;
-	}
-}
-@media screen and (min-width:320px) and (max-width:660px) and (orientation:portrait){
-	body {
-		background-image: url("../css/fondolegal.jpg");
-		background-attachment: fixed;
-		background-size: 100%;
-	}
-	header {
-		border-bottom: none;
-	}
-	h1 {
-		margin-bottom: 0;
-	}
-	.caja {
-		background-color: #1a0c0ca9;
-		width: 93.8%;
-		margin: 0px;
-		border-radius: 0px;
-	}
-	.caja input {
-		margin-top: 10%;
-	}
-	.logogps {
-		width: 50px;
-		height: 50px;
+		width: 459px;
 	}
 }
