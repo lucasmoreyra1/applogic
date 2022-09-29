@@ -1,6 +1,5 @@
 <?php
         require 'partials/partial.php';
-        require 'getDistance.php';
 
 
             if(!isset($_SESSION['coords'])){
@@ -9,7 +8,7 @@
 
             $var = count($_SESSION['data']) - 1;
 
-            if(!empty($_SESSION['data'])) {
+            if(isset($_POST['searchAddress'])) {
 
                     $geocodeData = getGeocodeData($_SESSION['data'][$var]);
                     if($geocodeData) {
@@ -28,7 +27,7 @@
             }
 
 
-            $coords = $_SESSION['coords'];
+          /*  $coords = $_SESSION['coords'];
 
             foreach ($coords as $key => $row) {
                 $orden1[$key] = $row['1'];
@@ -40,7 +39,7 @@
                 echo $row['0'].' '.$row['1'].' '.$row['2']. '<br/>';
             }
 
-        }
+        }*/
 
 
 

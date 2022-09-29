@@ -91,7 +91,7 @@
                                     <div class="direccion">
                                         <input type="text" name="searchAddress" id="id" placeholder="Por favor ingrese la direccion">
                                         <input type="hidden" name="valores" value="<?php echo implode(",", $_SESSION['data']); ?>">
-                                        <input type="submit" id="add" value="Añadir">
+                                        <input name="add" type="submit" id="add" value="Añadir">
                                     </div>
                                 </div>
                             </form>
@@ -105,7 +105,7 @@
                                 ?>
 
                             </table>
-                            <input type="submit" id="submit" />
+                            <input type="submit" id="submit" value="Ordenar y mostrar" />
                         </div>
                     <div id="directions-panel"></div>
                 </div>
