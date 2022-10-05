@@ -2,7 +2,7 @@
     session_start();
 
     if(isset($_SESSION['user_id'])){
-        header('Location: ../php-login/index.php');
+        header('Location: ../php-login');
     }
 
     require 'database.php';
@@ -19,7 +19,7 @@
             $_SESSION['user_id'] = $results['id'];
             header('Location: ../php-login/index.php');
         }else{
-            $message = '<span>Tu correo o contraseña son incorrectos.</span>';
+            $message = '<span class="mensaje">Tu correo o contraseña son incorrectos.</span>';
         }
     }
 ?>
@@ -31,6 +31,7 @@
         <title>Login</title>
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;1,700&display=swap" rel="stylesheet">
         <link rel="Stylesheet" href="assets/css/style.css">
     </head>
     <body class="fondo1">

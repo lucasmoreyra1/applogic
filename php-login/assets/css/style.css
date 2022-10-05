@@ -2,20 +2,22 @@
     margin: 0;
     padding: 0;
     font-family: 'Open Sans', sans-serif;
-    /* text-align: center; */
     background-image: url("../css/fondolegal.jpg");
     background-attachment: fixed;
     background-size: 100% 100%;
 }
-/* .fondo {
+.fondo {
 	margin: 0;
     padding: 0;
-	background-color: none;
-} */
+	font-family: 'Open Sans', sans-serif;
+	background-image: url("../css/fondoilustracion.png");
+    background-attachment: fixed;
+    background-size: 100% 100%;
+}
 .logogps {
 	background-image: url("../css/logoubitec.gif");
 	background-size: 100% 100%;
-	margin-left: 1%;
+	margin: 0 1% 1% 1%;
 	width: 110px;
 	height: 110px;
 }
@@ -25,42 +27,55 @@ h1 {
 .caja {
     width: 790px;
 	padding: 15px 15px 30px 15px;
-	background-color: #1a0c0ca9;
+	background-color: #080404c7;
 	border-radius: 20px;
 	margin: 20px auto;
 	text-align: center;
 }
-.caja2 {
-    width: 790px;
-	padding: 15px 15px 30px 15px;
-	background-color: black;
-	border-radius: 20px;
-	margin: 20px;
+.cajados {
+    width: 100%;
+	background-color: #080404c7;
+	margin: 0px;
 	color: white;
-	text-align: center;
 }
-#map {
-	position: relative;
-	right: 0px;
-    height: 515px;
-    width: 380px;
+.cajados input[type="text"] {
+	margin: 25px 15px 30px 50px;
+}
+.mensaje {
+	color: white;
+}
+table {
+	border-collapse: collapse;
+	width: 470px;
+	background-color: #080404c7;
+	color: white;
+	border: 2px solid white;
+	border-radius: 6px;
+	margin-bottom: 10px;
+}
+table td {
+	border-bottom: 1px solid white;
+	border-radius: 6px;
+	padding: 10px;
+	margin: 0px;
+	text-align: left;
 }
 input[type="text"], input[type="password"]{
     width: 78%;
+	font-size: 18px;
     outline: none;
-    padding: 20px;
+    padding: 16px;
     border-radius: 10px;
-    border: 1px soled #eee;
-    margin: 20px auto;
+    border: 1px solid grey;
+    margin: 20px;
 }
-
 input[type="submit"], input[type="button"]{
     padding: 10px;
     color: #fff;
     font-size: 18px;
 	background-color: #0a884d;
     width: 82%;
-    margin: 5px 0px;
+    margin: 10px;
     border: 0;
     border-radius: 10px;
     cursor: pointer;
@@ -70,24 +85,35 @@ input[type="submit"]:hover, input[type="button"]:hover{
     background-color: #146c43;
     transition: .3s;
 }
-.boton input, #add {
+#add {
 	background-color: red;
-	margin-left: 0%;
+	width: 90px;
+	padding: 17px;
+	text-align: center;
 }
-.boton input:hover, #add:hover {
+#add:hover, #submit:hover {
 	background-color: #820000;
 }
+#submit {
+	background-color: red;
+	width: 450px;
+}
 header {
-    border-bottom: 4px solid #1a0c0ca9;
+	display: flex;
+    border-bottom: 4px solid #080404c7;
     padding: 10px 0 5px 0;
     width: 100%;
-    font-family: thertole;
-    font-size: 50px;
-	text-shadow: 4px 4px 4px #07c22f;
 }
 header span{
+	font-family: thertole;
+	font-size: 50px;
 	margin-left: 100%;
+	text-shadow: 4px 4px 4px #07c22f;
     animation: animate 3s infinite;
+}
+header a {
+	text-decoration: none;
+	color: white;
 }
 @keyframes animate{
 	0% {color: #8a9597;}
@@ -99,13 +125,20 @@ header span{
 	font-family: thertole;
 	src: url("../css/Thertole.otf");
 }
-@media screen and (min-width:660px) and (max-width:1025px){
-	.caja2 {
-		width: 440px;
+@media screen and (min-width:1080px) and (max-width:1920px){
+    header {
+		font-size: 75px;
+    }
+    input[type="button"]{
+		margin-top: 15px;
 	}
-	
+}
+@media screen and (min-width:660px) and (max-width:1080px){
 	.caja {
 		width: 560px;
+	}
+	h1 {
+		font-size: 26px;
 	}
 	.logogps {
 		width: 70px;
@@ -125,13 +158,12 @@ header span{
 		margin-bottom: 0;
 	}
 	.caja {
-		background-color: #1a0c0ca9;
 		width: 93.8%;
 		margin: 0px;
 		border-radius: 0px;
 	}
 	.caja input {
-		margin-top: 10%;
+		margin-top: 8%;
 	}
 	.logogps {
 		width: 50px;
