@@ -35,11 +35,6 @@
         <link rel="Stylesheet" href="assets/css/style.css">
     </head>
     <body class="fondo1">
-
-        <?php if(!empty($message)): ?>
-            <p><?= $message ?></p>
-        <?php endif; ?>
-
         <?php
             require 'partials/header.php';
         ?>
@@ -53,6 +48,9 @@
             <a href="../php-login/signup.php">
                 <input type="button" value="Registrarse">
             </a>
+	    <?php if(!empty($message)): ?>
+            	<p><?= $message ?></p>
+            <?php endif; ?>
         </form>
     </body>
 
