@@ -1,15 +1,19 @@
 <?php
     require 'partials/partial.php';
     $array = $_SESSION['data'];
+    $start = $_SESSION['startEnd'];
+
 ?>
 
 
 
+
 <script>
+    var map;
     function initMap() {
   const directionsService = new google.maps.DirectionsService();
   const directionsRenderer = new google.maps.DirectionsRenderer(/*{draggable: true}*/);
-  const map = new google.maps.Map(document.getElementById("map"), {
+   map = new google.maps.Map(document.getElementById("map"), {
     zoom: 5,
     center: { lat: -33.3504261, lng: -60.2908364 },
   });
@@ -18,6 +22,9 @@
   document.getElementById("submit").addEventListener("click", () => {
     calculateAndDisplayRoute(directionsService, directionsRenderer);
   });
+
+  //
+  
 }
 
 function calculateAndDisplayRoute(directionsService, directionsRenderer) {
@@ -36,8 +43,8 @@ function calculateAndDisplayRoute(directionsService, directionsRenderer) {
 
   directionsService
     .route({
-      origin: "falcon 710 san nicolas argentina",
-      destination: "falcon 710 san nicolas argentina",
+      origin: '<?php echo $start; ?>',
+      destination: '<?php echo $start; ?>',
       waypoints: waypts,
       optimizeWaypoints: true,
       travelMode: google.maps.TravelMode.DRIVING,
@@ -55,9 +62,9 @@ function calculateAndDisplayRoute(directionsService, directionsRenderer) {
         const routeSegment = i + 1;
 
         summaryPanel.innerHTML +=
-          "<b>Route Segment: " + routeSegment + "</b><br>";
-        summaryPanel.innerHTML += route.legs[i].start_address + " to ";
-        summaryPanel.innerHTML += route.legs[i].end_address + "<br>";
+          "<b>Ruta Número: " + routeSegment + "</b><br>";
+        summaryPanel.innerHTML += route.legs[i].start_address.substr(0,30) + "..." + " <strong>Hacia </strong> ";
+        summaryPanel.innerHTML += route.legs[i].end_address.substr(0,33) + "..." + "<br>";
         summaryPanel.innerHTML += route.legs[i].distance.text + "<br><br>";
       }
     })
@@ -65,4 +72,43 @@ function calculateAndDisplayRoute(directionsService, directionsRenderer) {
 }
 
 window.initMap = initMap;
+
+
+</script>
+
+<script>
+
+  var searchInput = 'search_input';
+
+  const center = { lat: -33.3334669, lng: -60.2110494 };
+  const defaultBounds = {
+      north: center.lat + 0.2,
+      south: center.lat - 0.2,
+      east: center.lng + 0.2,
+      west: center.lng - 0.2,
+    };
+
+    const options = {
+      bounds: defaultBounds,
+      strictBounds: false,
+    };
+
+    var latitude;
+    var longitude;
+
+  $(document).ready(function () {
+      var autocomplete;
+      autocomplete = new google.maps.places.Autocomplete((document.getElementById(searchInput)), options);
+
+
+      google.maps.event.addListener(autocomplete, 'place_changed', function () {
+        var places = autocomplete.getPlace();
+
+        latitude = places.geometry.location.lat();
+        longitude = places.geometry.location.lng();
+
+
+    });
+
+  });
 </script>

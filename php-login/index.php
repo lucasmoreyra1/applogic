@@ -3,7 +3,7 @@
 
     require 'database.php';//llama a la conexion de la base de datos
 
-    require 'partials/functions.php';//golocalizacion con api
+    //require 'partials/functions.php';//golocalizacion con api
 
     if(isset($_SESSION['user_id'])){//login busca el usuario
         $records = $conn->prepare('SELECT id, email, password, nickname FROM users WHERE id =:id');
@@ -23,8 +23,9 @@
         require 'partials/partial.php';//guarda los datos de las direcciones
 
         require 'partials/mostrar-array.php';//procesado para guardar datos
-        require 'ordenar.php';// asigna latitud y longitud en una variable $coords 
-        require 'script.php';
+        //require 'ordenar.php'; //asigna latitud y longitud en una variable $coords 
+        //require 'script.php';
+
 
 ?>
 
@@ -38,6 +39,8 @@
         <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;1,700&display=swap" rel="stylesheet">
         <link rel="Stylesheet" href="assets/css/style.cs">
         <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+
+
         <!-- playground-hide -->
         <script>
         const process = { env: {} };
@@ -78,44 +81,73 @@
         ?>
 
         <?php if(!empty($user)): ?>
-            <br><p>Welcome</p>
-            <br>
-            <p>you are sussesfully loged in</p>
+            <br><p>Bienvenido a UBITEC</p>
 
             <div id="container">
                 <div id="map"></div>
                     <div id="sidebar">
                         <div>
+
                             <form method="post">
+
                                 <div class="form-group">
+                                    <?php
+                                        if(empty($_SESSION['startEnd'])):
+                                    ?>
+                                        <div>
+                                            <input type="text" id="search_input" name="searchStart"  placeholder="Ingrese direccion de comienzo">
+                                            <input name="add_start" type="submit" id="add_start" value="Añadir">
+                                        </div>
+                                    <?php
+                                        else:
+                                    ?>
+
                                     <div class="direccion">
-                                        <input type="text" name="searchAddress" id="id" placeholder="Por favor ingrese la direccion">
+                                        <input type="text" id="search_input" name="searchAddress"  placeholder="Por favor ingrese la direccion">
                                         <input type="hidden" name="valores" value="<?php echo implode(",", $_SESSION['data']); ?>">
                                         <input name="add" type="submit" id="add" value="Añadir">
+
+
                                     </div>
+
+                                    <?php
+                                        endif;
+                                    ?>  
                                 </div>
+<!--
+                                    <div class="form-group">
+                                        <input type="text" id="search_input" name="inicio" placeholder="Ingrese su punto de partida"> 
+                                        <input type="submit" name="start" value="Ingresar"  >
+                                    </div> -->
+
+
                             </form>
+
                             <table>
                                 <?php
-                                    echo count($valores);
-                                    for($var=0; $var < count($valores); $var++){ ?>
-                                        <?php  echo "<tr><td>"; echo $valores[$var]; echo "</td></tr>"?>
-                                <?php
+                                    if(!empty($_SESSION['data'])):
+                                ?>
+                                <?php 
+                                    for($var=0; $var < count($_SESSION['data']); $var++){
+                                        echo "<tr><td>"; echo $_SESSION['data'][$var]; echo "</td></tr>";
                                     }
                                 ?>
-
+                                <input type="submit" id="submit" value="Ordenar y mostrar" />
+                                <?php endif; ?>
                             </table>
-                            <input type="submit" id="submit" value="Ordenar y mostrar" />
+
                         </div>
                     <div id="directions-panel"></div>
                 </div>
             </div>
-            <script
-            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDGc0UBAR_Y30fX31EvaU65KATMx0c0ItI&callback=initMap&v=weekly"
-            defer
-            ></script>
 
 
+            <!-- Mapa google -->
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+            <?php
+                require 'script.php';
+            ?>
+            <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=places&key=AIzaSyDGc0UBAR_Y30fX31EvaU65KATMx0c0ItI&callback=initMap&v=weekly"></script>
 
 
 
@@ -126,13 +158,11 @@
             <a  href="login.php">Entrar</a> o
             <a  href="signup.php">Registrarse</a>
         <?php endif ?>
-        
-        
-        
-        
+
+
         <!--Reloj v1, solo se activa al cargar la pagina-->
-        
-        
+
+
         <div>
       <div class="tiempo" id="tiempo">0:00:00</div>
       </div>

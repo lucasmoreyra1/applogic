@@ -1,6 +1,5 @@
 <?php
 
-
         function getGeocodeData($address) {
             if(!empty($_POST['searchAddress']))
             {
@@ -15,6 +14,7 @@
                     $formattedAddress = isset($responseData['results'][0]['formatted_address']) ? $responseData['results'][0]['formatted_address'] : "";
                     if($latitude && $longitude && $formattedAddress)
                     {
+                        $status = true;
                         $geocodeData = array();
                         array_push(
                         $geocodeData,
