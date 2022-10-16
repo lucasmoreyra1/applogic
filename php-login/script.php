@@ -18,13 +18,15 @@
     center: { lat: -33.3504261, lng: -60.2908364 },
   });
 
+
+
   directionsRenderer.setMap(map);
   document.getElementById("submit").addEventListener("click", () => {
     calculateAndDisplayRoute(directionsService, directionsRenderer);
   });
 
   //
-  
+
 }
 
 function calculateAndDisplayRoute(directionsService, directionsRenderer) {
@@ -38,7 +40,7 @@ function calculateAndDisplayRoute(directionsService, directionsRenderer) {
         location: pase[i],
         stopover: true,
       });
-    
+
   }
 
   directionsService
@@ -106,6 +108,15 @@ window.initMap = initMap;
 
         latitude = places.geometry.location.lat();
         longitude = places.geometry.location.lng();
+
+        var marker = new google.maps.Marker({
+          position: {lat: latitude, lng: longitude},
+          map: map,
+          title: ''
+        });
+
+        map.setZoom(14);
+        map.setCenter({lat: latitude, lng: longitude});
 
 
     });
