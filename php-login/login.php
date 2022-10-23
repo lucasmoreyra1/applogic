@@ -42,14 +42,13 @@
             <h1>Iniciar Sesion</h1>
             <input type="text" name="email" placeholder="Ingrese su email">
             <input type="password" name="password" placeholder="Ingrese su contraseña">
-			
             <input type="submit" value="Entrar">
             </br>
             <a href="../php-login/signup.php">
                 <input type="button" value="Registrarse">
             </a>
-	    <?php if(!empty($message)): ?>
-            	<p><?= $message ?></p>
+            <?php if(!empty($message)): ?>
+                <p><?= $message ?></p>
             <?php endif; ?>
         </form>
     </body>
