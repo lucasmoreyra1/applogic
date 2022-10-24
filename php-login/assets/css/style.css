@@ -1,82 +1,291 @@
-body {
+.fondo1 {
     margin: 0;
     padding: 0;
     font-family: 'Open Sans', sans-serif;
-    text-align: center;
-    background-image: url("../css/fondolegal.jpg");
+    background-image: url("../css/fondogps.png");
+    background-attachment: fixed;
+    background-size: 100% 100%;
+}
+.fondo {
+	margin: 0;
+    padding: 0;
+	font-family: 'Open Sans', sans-serif;
+	background-image: url("../css/fondoilustracion.png");
     background-attachment: fixed;
     background-size: 100% 100%;
 }
 .logogps {
-	background-image: url("../css/gps.gif");
+	background-image: url("../css/logoubitec.gif");
 	background-size: 100% 100%;
-    display: inline-block;
-    margin-left: -200px;
-	width: 130px;
-	height: 130px;
+	width: 100px;
+	height: 100px;
+}
+header {
+    border-bottom: 4px solid #080404c7;
+    padding: 10px 0 5px 0;
+    width: 100%;
+}
+header span{
+	font-family: thertole;
+	font-size: 50px;
+	margin-left: 100%;
+	text-shadow: 4px 4px 4px #07c22f;
+    animation: animate 3s infinite;
+}
+.deslogear a {
+	position: absolute;
+	right: 0%;
+	top: 0%;
+	text-decoration: none;
+	color: white;
+	background-color: red;
+	border-radius: 10px;
+	margin: 2% 3% 0% 0%;
+	padding: 12px;
 }
 h1 {
+	padding: 0% 0% 4.5% 0%;
+	margin: 0%;
+	text-align: center;
 	color: rgb(206, 203, 203);
 }
 .caja {
-    width: 790px;
-	padding: 15px 15px 30px 15px;
-	background-color: #1a0c0ca9;
-	margin: auto;
-	margin-top: 20px;
-}
-input[type="text"], input[type="password"]{
-    width: calc(100% - 80px);
-    outline: none;
-    padding: 20px;
-    display: block;
-    border-radius: 3px;
-    border: 1px soled #eee;
+    width: 70%;
     margin: 20px auto;
+    padding: 2.5% 6.5%;
+    box-sizing: border-box;
+	background-color: #080404c7;
+	border-radius: 20px;
 }
-
-input[type="submit"], input[type="button"]{
-    padding: 10px;
+input[type="text"], input[type="password"] {
+	width: 100%;
+	padding: 12px;
+	margin-bottom: 4%;
+	box-sizing: border-box;
+	font-size: 18px;
+    outline: none;
+    border-radius: 10px;
+    border: 1px solid grey;
+}
+input[type="submit"], input[type="button"] {
+	width: 100%;
+    padding: 13px;
+    margin-bottom: 4%;
     color: #fff;
-    font-size: 18px;
+    font-size: 19px;
 	background-color: #0a884d;
-    width: calc(100% - 40px);
-    margin: 5px;
     border: 0;
-    border-radius: 3px;
-    cursor: pointer;
+    border-radius: 10px;
     transition: .3s;
 }
-
-input[type="submit"]:hover, input[type="button"]:hover{
+input[type="submit"]:hover, input[type="button"]:hover {
+	cursor: pointer;
     background-color: #146c43;
     transition: .3s;
 }
-header {
-    border-bottom: 2px solid #eee;
-    padding: 10px 0 5px 0;
-    width: 100%;
-    font-family: comic sans MS;
-    font-style: italic;
-    font-size: 60px;
-    font-weight: bold;
-    text-align: center;
+.mensaje {
+	color: white;
 }
-
-header a{
-    text-decoration: none;
-    animation: animates 3s infinite;
+.cajados {
+	width: 96%;
+	margin: 1% 2% 0% 2%;
+	padding: 2%;
+	box-sizing: border-box;
+	background-color: #080404c7;
+	border-radius: 10px;
 }
-@keyframes animates{
-    25% {color:#e10000;}
-    50% {color: #dd7e12;}
-    75% {color: #0ae7d5;}
-    100% {color: #0059ff;}
+.cajados input[type="text"] {
+	width: 88.5%;
+	margin: 0 2% 0 0;
+}
+#add, #add_start {
+	width: 9%;
+	background-color: red;
+	color: white;
+	padding: 12px;
+	margin: 0%;
+}
+#add:hover, #submit:hover, #add_start:hover {
+	background-color: #820000;
+}
+.map-table {
+	margin: 2%;
+	overflow: hidden;
+}
+#map, table {
+	float: left;
+}
+#map {
+	border: 3px solid #080404;
+	border-radius: 6px;
+	box-sizing: border-box;
+	height: 500px;
+	width: 47%;
+}
+#submit {
+	width: 47%;
+	margin: 0%;
+	background-color: red;
+}
+table {
+	width: 47%;
+	margin: 0%;
+	background-color: #080404c7;
+	color: white;
+	border: 1px 2px;
+	border-style: solid;
+	border-color: white;
+	border-radius: 6px;
+	border-spacing: 0;
+	text-align: center;
+}
+table td {
+	border-bottom: 1px solid white;
+	padding: 10px;
+}
+/*Checkbox de entregado*/
+table label input {
+	 position: absolute;
+	 opacity: 0;
+	 cursor: pointer;
+	 height: 0;
+	 width: 0;
+}
+table label {
+	 display: block;
+	 position: relative;
+	 cursor: pointer;
+	 font-size: 20px;
+	 user-select: none;
+}
+.check {
+	 position: absolute;
+	 left: 92%;
+	 bottom: -2px;
+	 box-sizing: border-box;
+	 height: 1.3em;
+	 width: 1.3em;
+	 background-color: #ccc;
+	 border: 2px solid red;
+	 border-radius: 25px;
+	 transition: 0.15s;
+}
+table label input:checked ~ .check {
+	 background-color: limegreen;
+	 border: none;
+	 border-radius: 25px;
+	 transition: 0.15s;
+}
+.check:after {
+	 content: "";
+	 position: absolute;
+	 display: none;
+}
+table label .check:after {
+	 left: 0.45em;
+	 top: 0.25em;
+	 width: 0.25em;
+	 height: 0.5em;
+	 border: solid white;
+	 border-width: 0 0.15em 0.15em 0;
+	 transform: rotate(45deg);
+}
+table label input:checked ~ .check:after {
+	display: block;
+}
+@keyframes animate{
+	0% {color: #8a9597;}
+	33% {color: #191919;}
+    66% {color: gray;}
+    100% {color: white;}
+}
+@font-face {
+	font-family: thertole;
+	src: url("../css/Thertole.otf");
+}
+@media screen and (min-width:1080px) and (max-width:1920px){
+    header span {
+		font-size: 76px;
     }
-@media screen and (min-width:479px) and (max-width:800px){
-	.caja {
-		width: 459px;
+    #map {
+    	height: 800px;
+    }
+}
+@media screen and (min-width:600px) and (max-width:1079px){
+	h1 {
+		font-size: 30px;
+	}
+	.logogps {
+		width: 70px;
+		height: 70px;
 	}
 }
-
-
+@media all and (min-width:320px) and (max-width:599px) and (orientation:portrait){
+	.fondo {
+		background-image: url("../css/fondoandroid.png");
+	}
+	.fondo1 {
+		background-image: url("../css/fondocelu.jpg");
+	}
+	.logogps {
+		width: 50px;
+		height: 50px;
+	}
+	.deslogear a {
+		padding: 12px;
+		margin: 4% 4% 0% 0%;
+	}
+	h1 {
+		padding: 6%;
+	}
+	.caja {
+		width: 100%;
+		padding: 0px 30px;
+		margin: 0%;
+		border-radius: 0px;
+	}
+	.cajados {
+		width: 100%;
+		border-radius: 0px;
+		margin: 0;
+	}
+	.caja input, .caja input[type="text"] {
+		margin-bottom: 11%;
+	}
+	.cajados input[type="text"] {
+		width: 60%;
+		padding: 12px;
+		margin: 15px 5%;
+	}
+	#add , #add_start{
+		width: 24%;
+		padding: 12px;
+		margin: 15px 4% 15px 0%;
+	}
+	table {
+		width: 92%;
+		text-align: left;
+		margin: 10px auto;
+	}
+	#map, table {
+		overflow: none;
+	}
+	#map {
+		box-sizing: border-box;
+		width: 92%;
+		height: 450px;
+		margin: 10px auto;
+	}
+	#submit {
+		width: 92%;
+		margin: 10px 4%;
+	}
+	header {
+		border-bottom: none;
+		margin-bottom: 1%;
+	}
+	header span {
+		margin-bottom: 1%;
+		font-size: 45px;
+	}
+}

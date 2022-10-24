@@ -2,7 +2,7 @@
     session_start();
 
     if(isset($_SESSION['user_id'])){
-        header('Location: /php-login');
+        header('Location: ../php-login');
     }
 
     require 'database.php';
@@ -17,9 +17,9 @@
 
         if(is_countable($results) > 0 && password_verify($_POST['password'], $results['password'] ) ){
             $_SESSION['user_id'] = $results['id'];
-            header('Location: /php-login');
+            header('Location: ../php-login/index.php');
         }else{
-            $message = 'sorry, your credencials are invalid';
+            $message = '<span class="mensaje">Tu correo o contraseña son incorrectos.</span>';
         }
     }
 ?>
@@ -29,17 +29,13 @@
     <head>
         <meta charset="UTF-8">
         <title>Login</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;1,700&display=swap" rel="stylesheet">
-        <link rel="Stylesheet" href="assets/css/style.css">
+        <link rel="stylesheet" type="text/css" href="assets/css/style.css">
     </head>
-    <body>
-
-        <?php if(!empty($message)): ?>
-            <p><?= $message ?></p>
-        <?php endif; ?>
-
+    <body class="fondo1">
         <?php
             require 'partials/header.php';
         ?>
@@ -52,8 +48,10 @@
             <a href="../php-login/signup.php">
                 <input type="button" value="Registrarse">
             </a>
+            <?php if(!empty($message)): ?>
+                <p><?= $message ?></p>
+            <?php endif; ?>
         </form>
-
     </body>
 
 </html>
