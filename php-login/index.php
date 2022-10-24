@@ -47,57 +47,59 @@
             require 'partials/header.php';
         ?>
         <?php if(!empty($user)): ?>
-        <div class="deslogear"><a href="logout.php">Log Out</a></div>
-        <div class="cajados">
-	    	<form method="post">
-				<?php
-					if(empty($_SESSION['startEnd'])):
-				?>
-				<input type="text" id="search_input" name="searchStart"  placeholder="Ingrese direccion de comienzo">
-				<input name="add_start" type="submit" id="add_start" value="Añadir">
-				<?php
-					else:
-				?>
-				<input type="text" id="search_input" name="searchAddress"  placeholder="Por favor ingrese la direccion">
-				<input type="hidden" name="valores" value="<?php echo implode(",", $_SESSION['data']); ?>">
-				<input name="add" type="submit" id="add" value="Añadir">
-				<?php
-					endif;
-				?>
-			</form>
-		</div>
-        <div class="map-table">
-			<div id="map"></div>
-			<div>
-				<table>
-					<tr>
-						<td>Direcciones</td>
-					</tr>
-					<?php
-						if(!empty($_SESSION['data'])):
-					?>
-					<?php 
-						for($var=0; $var < count($_SESSION['data']); $var++){
-							echo "<tr><td>"; echo $_SESSION['data'][$var]; echo "<label><input type='checkbox'><div class='check'></div></label>"; echo "</td></tr>";
-						}
-					?>
-					<input type="submit" id="submit" value="Ordenar y mostrar" />
-					<?php endif; ?>
-				</table>
-				<div id="directions-panel"><strong>Rutas ordenadas</strong></div>
+			<?php require 'bd.php'; print_r($_SESSION['id_ruta']);?>
+
+			<div class="deslogear"><a href="logout.php">Log Out</a></div>
+				<div class="cajados">
+					<form method="post">
+						<?php
+							if(empty($_SESSION['startEnd'])):
+						?>
+							<input type="text" id="search_input" name="searchStart"  placeholder="Ingrese direccion de comienzo">
+							<input name="add_start" type="submit" id="add_start" value="Añadir">
+						<?php
+							else:
+						?>
+							<input type="text" id="search_input" name="searchAddress"  placeholder="Por favor ingrese la direccion">
+							<input type="hidden" name="valores" value="<?php echo implode(",", $_SESSION['data']); ?>">
+							<input name="add" type="submit" id="add" value="Añadir">
+						<?php
+							endif;
+						?>
+					</form>
+				</div>
+			<div class="map-table">
+				<div id="map"></div>
+				<div>
+					<table>
+						<tr>
+							<td>Direcciones</td>
+						</tr>
+						<?php
+							if(!empty($_SESSION['data'])):
+						?>
+						<?php 
+							for($var=0; $var < count($_SESSION['data']); $var++){
+								echo "<tr><td>"; echo $_SESSION['data'][$var]; echo "<label><input type='checkbox'><div class='check'></div></label>"; echo "</td></tr>";
+							}
+						?>
+						<input type="submit" id="submit" value="Ordenar y mostrar" />
+						<?php endif; ?>
+					</table>
+					<div id="directions-panel"><strong>Rutas ordenadas</strong></div>
+				</div>
 			</div>
-		</div>
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script> 
-		<?php
-			require 'script.php';
-		?>
-		<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=places&key=AIzaSyDGc0UBAR_Y30fX31EvaU65KATMx0c0ItI&callback=initMap&v=weekly"></script>
-		<?php else: ?>
-			<div class="caja">
-				<h1>Por favor entre o registrese para continuar</h1>
-				<a href="login.php"><input type="button" value="Logearse"></a>
-				<a href="signup.php"><input type="button" value="Registrarse"></a>
-			</div>
+			<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script> 
+			<?php
+				require 'script.php';
+			?>
+			<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=places&key=AIzaSyDGc0UBAR_Y30fX31EvaU65KATMx0c0ItI&callback=initMap&v=weekly"></script>
+			<?php else: ?>
+				<div class="caja">
+					<h1>Por favor entre o registrese para continuar</h1>
+					<a href="login.php"><input type="button" value="Logearse"></a>
+					<a href="signup.php"><input type="button" value="Registrarse"></a>
+				</div>
         <?php endif ?>
         <!--Reloj v1, solo se activa al cargar la pagina
         <div>
