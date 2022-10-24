@@ -69,24 +69,24 @@
         <div class="map-table">
 			<div id="map"></div>
 			<div>
-			<table>
-				<tr>
-					<td>Direcciones</td>
-				</tr>
-				<?php
-					if(!empty($_SESSION['data'])):
-				?>
-				<?php 
-					for($var=0; $var < count($_SESSION['data']); $var++){
-						echo "<tr><td>"; echo $_SESSION['data'][$var]; echo "<label><input type=checkbox><div class=check></div></label>"; echo "</td></tr>";
-					}
-				?>
-				<input type="submit" id="submit" value="Ordenar y mostrar" />
-				<?php endif; ?>
-			</table>
+				<table>
+					<tr>
+						<td>Direcciones</td>
+					</tr>
+					<?php
+						if(!empty($_SESSION['data'])):
+					?>
+					<?php 
+						for($var=0; $var < count($_SESSION['data']); $var++){
+							echo "<tr><td>"; echo $_SESSION['data'][$var]; echo "<label><input type='checkbox'><div class='check'></div></label>"; echo "</td></tr>";
+						}
+					?>
+					<input type="submit" id="submit" value="Ordenar y mostrar" />
+					<?php endif; ?>
+				</table>
+				<div id="directions-panel"><strong>Rutas ordenadas</strong></div>
 			</div>
 		</div>
-		<div id="directions-panel"></div>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script> 
 		<?php
 			require 'script.php';

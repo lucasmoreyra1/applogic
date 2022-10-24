@@ -1,4 +1,3 @@
 <header>
-    <div class="logogps"></div>
-    <a href="#">Ubitec</a>
+    <div class="logogps"><span>UBITEC</span></div>
 </header>

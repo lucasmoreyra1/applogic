@@ -4,10 +4,6 @@
     $start = $_SESSION['startEnd'];
 
 ?>
-
-
-
-
 <script>
     var map;
     function initMap() {

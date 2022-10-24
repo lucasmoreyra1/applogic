@@ -10,7 +10,7 @@
 	margin: 0;
     padding: 0;
 	font-family: 'Open Sans', sans-serif;
-	background-image: url("../css/fondoilustracion.png");
+	background-image: url("../css/fondogps.png");
     background-attachment: fixed;
     background-size: 100% 100%;
 }
@@ -40,7 +40,7 @@ header span{
 	color: white;
 	background-color: red;
 	border-radius: 10px;
-	margin: 2% 3% 0% 0%;
+	margin: 2% 2% 0% 0%;
 	padding: 12px;
 }
 h1 {
@@ -88,21 +88,21 @@ input[type="submit"]:hover, input[type="button"]:hover {
 }
 .cajados {
 	width: 96%;
-	margin: 1% 2% 0% 2%;
+	margin: 2% 2% 0% 2%;
 	padding: 2%;
 	box-sizing: border-box;
 	background-color: #080404c7;
 	border-radius: 10px;
 }
 .cajados input[type="text"] {
-	width: 88.5%;
+	width: 90.2%;
 	margin: 0 2% 0 0;
 }
 #add, #add_start {
-	width: 9%;
+	width: 7%;
 	background-color: red;
 	color: white;
-	padding: 12px;
+	padding: 12px 0%;
 	margin: 0%;
 }
 #add:hover, #submit:hover, #add_start:hover {
@@ -119,28 +119,27 @@ input[type="submit"]:hover, input[type="button"]:hover {
 	border: 3px solid #080404;
 	border-radius: 6px;
 	box-sizing: border-box;
-	height: 500px;
-	width: 47%;
+	height: 550px;
+	width: 51%;
 }
 #submit {
 	width: 47%;
-	margin: 0%;
+	margin: 0 0 2% 2%;
 	background-color: red;
 }
 table {
 	width: 47%;
-	margin: 0%;
-	background-color: #080404c7;
-	color: white;
+	margin: 0% 0% 2% 2%;
+	background-color: #e1e4e5;
+	font-weight: bold;
 	border: 1px 2px;
 	border-style: solid;
-	border-color: white;
-	border-radius: 6px;
+	border-color: black;
+	border-radius: 8px;
 	border-spacing: 0;
-	text-align: center;
 }
 table td {
-	border-bottom: 1px solid white;
+	border-bottom: 1px solid black;
 	padding: 10px;
 }
 /*Checkbox de entregado*/
@@ -160,7 +159,7 @@ table label {
 }
 .check {
 	 position: absolute;
-	 left: 92%;
+	 left: 95%;
 	 bottom: -2px;
 	 box-sizing: border-box;
 	 height: 1.3em;
@@ -193,6 +192,16 @@ table label .check:after {
 table label input:checked ~ .check:after {
 	display: block;
 }
+#directions-panel {
+	width: 47%;
+	margin-left: 2%;
+	padding: 0.7%;
+	float: left;
+	background-color: #e1e4e5;
+	border: 3px solid black;
+	border-radius: 10px;
+	box-sizing: border-box;
+}
 @keyframes animate{
 	0% {color: #8a9597;}
 	33% {color: #191919;}
@@ -207,6 +216,11 @@ table label input:checked ~ .check:after {
     header span {
 		font-size: 76px;
     }
+	.deslogear a {
+		margin: 1.7% 2% 0 0;
+		padding: 15px;
+		font-size: 19px;
+	}
     #map {
     	height: 800px;
     }
@@ -221,64 +235,12 @@ table label input:checked ~ .check:after {
 	}
 }
 @media all and (min-width:320px) and (max-width:599px) and (orientation:portrait){
-	.fondo {
-		background-image: url("../css/fondoandroid.png");
-	}
-	.fondo1 {
+	.fondo, .fondo1 {
 		background-image: url("../css/fondocelu.jpg");
 	}
 	.logogps {
 		width: 50px;
 		height: 50px;
-	}
-	.deslogear a {
-		padding: 12px;
-		margin: 4% 4% 0% 0%;
-	}
-	h1 {
-		padding: 6%;
-	}
-	.caja {
-		width: 100%;
-		padding: 0px 30px;
-		margin: 0%;
-		border-radius: 0px;
-	}
-	.cajados {
-		width: 100%;
-		border-radius: 0px;
-		margin: 0;
-	}
-	.caja input, .caja input[type="text"] {
-		margin-bottom: 11%;
-	}
-	.cajados input[type="text"] {
-		width: 60%;
-		padding: 12px;
-		margin: 15px 5%;
-	}
-	#add , #add_start{
-		width: 24%;
-		padding: 12px;
-		margin: 15px 4% 15px 0%;
-	}
-	table {
-		width: 92%;
-		text-align: left;
-		margin: 10px auto;
-	}
-	#map, table {
-		overflow: none;
-	}
-	#map {
-		box-sizing: border-box;
-		width: 92%;
-		height: 450px;
-		margin: 10px auto;
-	}
-	#submit {
-		width: 92%;
-		margin: 10px 4%;
 	}
 	header {
 		border-bottom: none;
@@ -287,5 +249,69 @@ table label input:checked ~ .check:after {
 	header span {
 		margin-bottom: 1%;
 		font-size: 45px;
+	}
+	.deslogear a {
+		padding: 12px;
+		margin: 3% 3% 0% 0%;
+	}
+	h1 {
+		padding: 6%;
+	}
+	.caja {
+		width: 92%;
+		padding: 0px 30px;
+		margin: 15px auto;
+		border-radius: 20px;
+	}
+	.caja input, .caja input[type="text"] {
+		margin-bottom: 11%;
+	}
+	.cajados {
+		width: 100%;
+		border-radius: 0px;
+		margin: 0;
+		padding: 0;
+	}
+	.cajados input[type="text"] {
+		width: 70%;
+		padding: 12px;
+		margin: 3%;
+	}
+	#add , #add_start{
+		width: 19.5%;
+		padding: 13px 0px;
+		margin: 12px 3% 12px 0%;
+		font-size: 18px;
+	}
+	.map-table{
+		margin: 0%;
+		overflow: none;
+	}
+	#map, table {
+		float: none;
+	}
+	#map {
+		box-sizing: border-box;
+		width: 94%;
+		height: 450px;
+		margin: 10px auto;
+	}
+	#submit {
+		width: 94%;
+		margin: 0px 3%;
+	}
+	table {
+		width: 94%;
+		text-align: left;
+		margin: 10px auto;
+	}
+	.check {
+		position: absolute;
+		left: 92%;
+	}
+	#directions-panel {
+		width: 94%;
+		margin: 0 3% 12px 3%;
+		padding: 2.5%;
 	}
 }

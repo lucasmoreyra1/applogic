@@ -47,7 +47,7 @@
             <input type="submit" value="Crear usuario">
             <a href="../php-login/login.php"><input type="button" value="Entrar"></a>
 			<?php if(!empty($message)): ?>
-            <p><?= $message ?></p>
+                <p><?= $message ?></p>
 			<?php endif; ?>
         </form>
     </body>
