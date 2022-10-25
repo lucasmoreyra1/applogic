@@ -10,7 +10,7 @@
   const directionsService = new google.maps.DirectionsService();
   const directionsRenderer = new google.maps.DirectionsRenderer(/*{draggable: true}*/);
    map = new google.maps.Map(document.getElementById("map"), {
-    zoom: 5,
+    zoom: 10,
     center: { lat: -33.3504261, lng: -60.2908364 },
   });
 
@@ -111,7 +111,7 @@ window.initMap = initMap;
           title: ''
         });
 
-        map.setZoom(14);
+        map.setZoom(15);
         map.setCenter({lat: latitude, lng: longitude});
 
 

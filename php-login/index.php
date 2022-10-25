@@ -47,7 +47,7 @@
             require 'partials/header.php';
         ?>
         <?php if(!empty($user)): ?>
-			<?php require 'bd.php'; print_r($_SESSION['id_ruta']);?>
+			<?php require 'bd.php'; $_SESSION['direc'] = [1,2,3,4,5];print_r($_SESSION['direc']);?>
 
 			<div class="deslogear"><a href="logout.php">Log Out</a></div>
 				<div class="cajados">
