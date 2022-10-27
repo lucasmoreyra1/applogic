@@ -1,8 +1,14 @@
 <?php
     require 'partials/partial.php';
-    $array = $_SESSION['data'];
-    $start = $_SESSION['startEnd'];
+    $start = "";
+    $array = "";
+    if(isset($_SESSION['direc'])){
+      $array = $_SESSION['direc'];
+    }
 
+    if(isset($_SESSION['startEnd']) && !empty($_SESSION['startEnd']['ruta_inicio'])){
+      $start = $_SESSION['startEnd']['ruta_inicio'];
+    }
 ?>
 <script>
     var map;

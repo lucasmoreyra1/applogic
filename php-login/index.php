@@ -17,7 +17,6 @@
         }
     }
         require 'partials/partial.php';//guarda los datos de las direcciones
-        require 'partials/mostrar-array.php';//procesado para guardar datos
         // require 'ordenar.php';// asigna latitud y longitud en una variable $coords
 		// require 'script.php';
 ?>
@@ -47,7 +46,7 @@
             require 'partials/header.php';
         ?>
         <?php if(!empty($user)): ?>
-			<?php require 'bd.php'; $_SESSION['direc'] = [1,2,3,4,5];print_r($_SESSION['direc']);?>
+			<?php require 'bd.php';print_r($_SESSION['startEnd']);?>
 
 			<div class="deslogear"><a href="logout.php">Log Out</a></div>
 				<div class="cajados">
@@ -76,16 +75,22 @@
 							<td>Direcciones</td>
 						</tr>
 						<?php
-							if(!empty($_SESSION['data'])):
+							if(!empty($_SESSION['direc'])):
 						?>
 						<?php 
-							for($var=0; $var < count($_SESSION['data']); $var++){
-								echo "<tr><td>"; echo $_SESSION['data'][$var]; echo "<label><input type='checkbox'><div class='check'></div></label>"; echo "</td></tr>";
+							for($var=0; $var < count($_SESSION['direc']); $var++){
+								echo "<tr><td>"; echo $_SESSION['direc'][$var]; echo "<label><input type='checkbox'><div class='check'></div></label>"; echo "</td></tr>";
 							}
 						?>
 						<input type="submit" id="submit" value="Ordenar y mostrar" />
-						<?php endif; ?>
+						
 					</table>
+
+					<form method="POST">
+						<input type="submit" id="submit" name="delete" value="Eliminar todo" />
+					</form>
+					<?php endif; ?>
+
 					<div id="directions-panel"><strong>Rutas ordenadas</strong></div>
 				</div>
 			</div>
