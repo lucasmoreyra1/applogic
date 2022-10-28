@@ -1,12 +1,4 @@
 .fondo1 {
-    margin: 0;
-    padding: 0;
-    font-family: 'Open Sans', sans-serif;
-    background-image: url("../css/fondogps.png");
-    background-attachment: fixed;
-    background-size: 100% 100%;
-}
-.fondo {
 	margin: 0;
     padding: 0;
 	font-family: 'Open Sans', sans-serif;
@@ -14,8 +6,16 @@
     background-attachment: fixed;
     background-size: 100% 100%;
 }
+.fondo {
+	margin: 0;
+    padding: 0;
+	font-family: 'Open Sans', sans-serif;
+	background-image: url(../css/fondoindex.jpg);
+	background-attachment: fixed;
+    background-size: 100% 100%;
+}
 .logogps {
-	background-image: url("../css/logoubitec.gif");
+	background-image: url("logoubitec.gif");
 	background-size: 100% 100%;
 	width: 100px;
 	height: 100px;
@@ -31,6 +31,9 @@ header span{
 	margin-left: 100%;
 	text-shadow: 4px 4px 4px #07c22f;
     animation: animate 3s infinite;
+}
+.array {
+	display: none;
 }
 .deslogear a {
 	position: absolute;
@@ -84,6 +87,7 @@ input[type="submit"]:hover, input[type="button"]:hover {
     transition: .3s;
 }
 .mensaje {
+	text-align: center;
 	color: white;
 }
 .cajados {
@@ -195,7 +199,7 @@ table label input:checked ~ .check:after {
 #directions-panel {
 	width: 47%;
 	margin-left: 2%;
-	padding: 0.7%;
+	padding: 12px;
 	float: left;
 	background-color: #e1e4e5;
 	border: 3px solid black;
@@ -233,9 +237,18 @@ table label input:checked ~ .check:after {
 		width: 70px;
 		height: 70px;
 	}
+	.cajados input[type="text"] {
+		width: 89%;
+	}
+	#add, #add_start {
+		width: 8.2%;
+	}
 }
 @media all and (min-width:320px) and (max-width:599px) and (orientation:portrait){
-	.fondo, .fondo1 {
+	.fondo {
+		background-image: url("../css/fondoindex-res.jpg");
+	}
+	.fondo1 {
 		background-image: url("../css/fondocelu.jpg");
 	}
 	.logogps {
@@ -254,17 +267,17 @@ table label input:checked ~ .check:after {
 		padding: 12px;
 		margin: 3% 3% 0% 0%;
 	}
-	h1 {
-		padding: 6%;
-	}
 	.caja {
 		width: 92%;
-		padding: 0px 30px;
-		margin: 15px auto;
+		padding: 20px 30px;
+		margin: 20px auto;
 		border-radius: 20px;
 	}
 	.caja input, .caja input[type="text"] {
-		margin-bottom: 11%;
+		margin-bottom: 10%;
+	}
+	.mensaje{
+		margin-bot: 0;
 	}
 	.cajados {
 		width: 100%;
@@ -311,7 +324,7 @@ table label input:checked ~ .check:after {
 	}
 	#directions-panel {
 		width: 94%;
-		margin: 0 3% 12px 3%;
+		margin: 10px 3%;
 		padding: 2.5%;
 	}
 }

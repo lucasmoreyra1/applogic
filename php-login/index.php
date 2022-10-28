@@ -27,7 +27,7 @@
         <meta charset="UTF-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-		<title>Mapa</title>
+		<title>Ubitec - Entrega de correo</title>
 		<link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href=" https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;1,700&display=swap" rel="stylesheet">
@@ -46,8 +46,9 @@
             require 'partials/header.php';
         ?>
         <?php if(!empty($user)): ?>
+        	<div class="array">
 			<?php require 'bd.php';print_r($_SESSION['startEnd']);?>
-
+			</div>
 			<div class="deslogear"><a href="logout.php">Log Out</a></div>
 				<div class="cajados">
 					<form method="post">
@@ -89,9 +90,9 @@
 					<form method="POST">
 						<input type="submit" id="submit" name="delete" value="Eliminar todo" />
 					</form>
+					<div id="directions-panel"><strong>Rutas ordenadas</strong></div>
 					<?php endif; ?>
 
-					<div id="directions-panel"><strong>Rutas ordenadas</strong></div>
 				</div>
 			</div>
 			<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script> 
