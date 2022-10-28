@@ -2,7 +2,7 @@
     session_start();
 
     if(isset($_SESSION['user_id'])){
-        header('Location: ../php-login');
+        header('Location: /index.php');
     }
 
     require 'database.php';
@@ -17,9 +17,9 @@
 
         if(is_countable($results) > 0 && password_verify($_POST['password'], $results['password'] ) ){
             $_SESSION['user_id'] = $results['id'];
-            header('Location: ../php-login/index.php');
+            header('Location: /ubitec/index.php');
         }else{
-            $message = '<span class="mensaje">Tu correo o contraseña son incorrectos.</span>';
+            $message = 'Tu correo o contraseña son incorrectos.';
         }
     }
 ?>
@@ -44,9 +44,8 @@
             <input type="text" name="email" placeholder="Ingrese su email">
             <input type="password" name="password" placeholder="Ingrese su contraseña">
             <input type="submit" value="Entrar">
-            </br>
             <?php if(!empty($message)): ?>
-                <p><?= $message ?></p>
+                <div class="mensaje"><?= $message ?></div>
             <?php endif; ?>
         </form>
     </body>
