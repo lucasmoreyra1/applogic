@@ -5,5 +5,5 @@
 
     session_destroy();
 
-    header('Location: /php-login/index.php');
+    header('Location: /ubitec/index.php');
 ?>
