@@ -1,11 +1,9 @@
 <?php
     session_start();
 
-    require 'database.php';//llama a la conexion de la base de datos
+    require 'database.php';//Llama a la conexión de la base de datos
 
-    // require 'partials/functions.php'; //geolocalizacion con api
-
-    if(isset($_SESSION['user_id'])){//login busca el usuario
+    if(isset($_SESSION['user_id'])){//Login busca a el Usuario
         $records = $conn->prepare('SELECT id, email, password, nickname FROM users WHERE id =:id');
         $records->bindParam(':id', $_SESSION['user_id']);
         $records->execute();
@@ -16,9 +14,7 @@
             $user = $results;
         }
     }
-        require 'partials/partial.php';//guarda los datos de las direcciones
-        // require 'ordenar.php';// asigna latitud y longitud en una variable $coords
-		// require 'script.php';
+        require 'partials/partial.php';//Guarda los datos de las direcciones
 ?>
 
 <!DOCTYPE html>
@@ -38,20 +34,20 @@
         process.env.GOOGLE_MAPS_API_KEY =
             "AIzaSyB41DRUbKWJHPxaFjMAwdrzWzbVKartNGg";
         </script>
-		<link rel="stylesheet" type="text/css" href="assets/css/style.css">
+		<link rel="stylesheet" type="text/css" href="./assets/css/style.css">
 		<script type="module" src="/script.php"></script>
     </head>
     <body class="fondo">
     	<?php
-            require 'partials/header.php';
+            require 'partials/header.php';//Llama a un header independiente
         ?>
         <?php if(!empty($user)): ?>
-        	<div class="array">
-			<?php require 'bd.php';print_r($_SESSION['startEnd']);?>
+        	<div class="array"> <!--Se oculta el texto de startend-->
+				<?php require 'bd.php';print_r($_SESSION['startEnd']);?>
 			</div>
-			<div class="deslogear"><a href="logout.php">Log Out</a></div>
+			<div class="deslogear"><a href="logout.php">Log Out</a></div> <!--Botón de deslogeo-->
 				<div class="cajados">
-					<form method="post">
+					<form method="post"><!--form para ingresar dirección de comienzo y direcciones de entrega-->
 						<?php
 							if(empty($_SESSION['startEnd'])):
 						?>
@@ -81,18 +77,18 @@
 						<?php 
 							for($var=0; $var < count($_SESSION['direc']); $var++){
 								echo "<tr><td>"; echo $_SESSION['direc'][$var]; echo "<label><input type='checkbox'><div class='check'></div></label>"; echo "</td></tr>";
-							}
+							} //Tabla que se llena añadiendo direcciones
 						?>
 						<input type="submit" id="submit" value="Ordenar y mostrar" />
-						
+						<!--Botón que ordena y muestra la ruta más corta para el usuario-->
 					</table>
-
 					<form method="POST">
 						<input type="submit" id="submit" name="delete" value="Eliminar todo" />
+						<!--Botón que elimina las direcciones añadidas-->
 					</form>
 					<div id="directions-panel"><strong>Rutas ordenadas</strong></div>
+					<!--Información de ayuda para ver donde comenzar-->
 					<?php endif; ?>
-
 				</div>
 			</div>
 			<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script> 
@@ -102,42 +98,10 @@
 			<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=places&key=AIzaSyDGc0UBAR_Y30fX31EvaU65KATMx0c0ItI&callback=initMap&v=weekly"></script>
 			<?php else: ?>
 				<div class="caja">
-					<h1>Por favor entre o registrese para continuar</h1>
+					<h1>Por favor Entre ó Registrese</h1>
 					<a href="login.php"><input type="button" value="Logearse"></a>
 					<a href="signup.php"><input type="button" value="Registrarse"></a>
 				</div>
         <?php endif ?>
-        <!--Reloj v1, solo se activa al cargar la pagina
-        <div>
-			<div id="tiempo">0:00:00</div>
-		</div>
-        <script>
-			let tiempoRef = Date.now()
-			let cronometrar = true
-			let acumulado = 0
-
-			setInterval(() => {
-				let tiempo = document.getElementById("tiempo")
-				if (cronometrar) {
-					acumulado += Date.now() - tiempoRef
-				}
-				tiempoRef = Date.now()
-				tiempo.innerHTML = formatearMS(acumulado)
-			}, 10 / 60);
-
-			function formatearMS(tiempo_ms) {
-				let MS = tiempo_ms % 1
-			  
-				let St = Math.floor(((tiempo_ms - MS) / 1000))
-			  
-				let S = St%60
-				let M = Math.floor((St / 60) % 60)
-				let H = Math.floor((St/60 / 60))
-				Number.prototype.ceros = function (n) {
-					return (this + "").padStart(n, 0)
-				}
-				return H.ceros(1) + ":" + M.ceros(2) + ":" + S.ceros(2)
-			}
-		</script>-->
     </body>
 </html>

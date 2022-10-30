@@ -35,7 +35,7 @@
         <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;1,700&display=swap" rel="stylesheet">
         <link rel="stylesheet" type="text/css" href="assets/css/style.css">
     </head>
-    <body class="fondo1">
+    <body class="fondo">
         <?php
             require 'partials/header.php';
         ?>
@@ -44,6 +44,7 @@
             <input type="text" name="email" placeholder="Ingrese su email">
             <input type="password" name="password" placeholder="Ingrese su contraseña">
             <input type="submit" value="Entrar">
+            <input type="button" value="Regresar" onClick="history.go(-1);"><!--Boton para regresar a página anterior-->
             <?php if(!empty($message)): ?>
                 <div class="mensaje"><?= $message ?></div>
             <?php endif; ?>
