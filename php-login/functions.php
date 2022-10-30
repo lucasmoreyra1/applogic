@@ -12,16 +12,14 @@ use LDAP\Result;
             return $results;
         }
 
-        function searchAllId($conn, $idUser){//busca todos los  id de ruta del usuario
+        function searchAllId($conn, $idUser){//busca todos los  id de ruta del usuario y los devuelve en un array
             $sql = "SELECT id_ruta FROM user_ruta WHERE id_user=:id_user";
             $stmt = $conn->prepare($sql);
             $stmt->bindParam(':id_user', $idUser);
             $stmt->execute();
             $results = array();
             while($moment = $stmt->fetch(PDO::FETCH_ASSOC)){
-
                 array_push($results, $moment['id_ruta']);
-
             }
             return $results;
         }
@@ -80,6 +78,7 @@ use LDAP\Result;
             return;
         }
 
+        //carga direcciones de inicio y final
         //$rutaIoF string que indica la tabla que se cargara la direccion ruta_inicio o ruta_final
         function loadExtremes($conn ,$id_ruta, $direccion, $rutaIoF){
             $load = "UPDATE user_ruta SET $rutaIoF=:direccion WHERE id_ruta=:id_ruta";
@@ -90,7 +89,7 @@ use LDAP\Result;
             return $result;
         }
 
-        //recive el punto de inicio y final en un array clave valor
+        //recive el punto de inicio y final en un array clave valor con los nombres de las columnas
         function reciveExtremes($conn ,$id_ruta){
             $load = "SELECT ruta_inicio, ruta_final FROM user_ruta WHERE id_ruta=:id_ruta";
             $stmt = $conn->prepare($load);
@@ -107,7 +106,7 @@ use LDAP\Result;
 
         }
 
-        //crea un nuevo id_ruta
+        //crea un nuevo id_ruta 
         function newId_ruta($conn, $userId){
             $sql = "INSERT INTO user_ruta (id_user) VALUES (:mostrar)";
             $stmt = $conn->prepare($sql);
