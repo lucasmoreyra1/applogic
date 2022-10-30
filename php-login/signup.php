@@ -13,10 +13,10 @@
         $stmt->bindParam(':password', $password);
 
         if($stmt->execute()){
-            $message = 'El usuario fue creado!';
+            $message = '<span class="mensaje">El usuario fue creado!</span>';
         }
         else{
-            $message = 'Error al crear el usuario!';
+            $message = '<span class="mensaje">Error al crear el usuario!</span>';
         }
     }
 ?>
@@ -32,7 +32,7 @@
         <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;1,700&display=swap" rel="stylesheet">
         <link rel="stylesheet" type="text/css" href="assets/css/style.css">
     </head>
-    <body class="fondo">
+    <body class="fondo1">
 
         <?php
             require 'partials/header.php';
@@ -45,9 +45,9 @@
             <input type="password" name="password" placeholder="Ingrese su contraseña">
             <input type="password" name="_confirm_password" placeholder="Confirme su contraseña">
             <input type="submit" value="Crear usuario">
-            <a href="./login.php"><input type="button" value="Entrar"></a>
+            <a href="../php-login/login.php"><input type="button" value="Entrar"></a>
 			<?php if(!empty($message)): ?>
-                <div class="mensaje"><?= $message ?></div>
+                <p><?= $message ?></p>
 			<?php endif; ?>
         </form>
     </body>

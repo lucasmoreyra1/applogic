@@ -2,6 +2,7 @@
     require 'partials/partial.php';
     $start = "";
     $array = "";
+    $end = "";
     if(isset($_SESSION['direc'])){
       $array = $_SESSION['direc'];
     }
@@ -9,13 +10,17 @@
     if(isset($_SESSION['startEnd']) && !empty($_SESSION['startEnd']['ruta_inicio'])){
       $start = $_SESSION['startEnd']['ruta_inicio'];
     }
+
+    if(isset($_SESSION['startEnd']) && !empty($_SESSION['startEnd']['ruta_final'])){
+      $end = $_SESSION['startEnd']['ruta_final'];
+    }
 ?>
 <script>
     var map;
-    function initMap() {
-  const directionsService = new google.maps.DirectionsService();
-  const directionsRenderer = new google.maps.DirectionsRenderer(/*{draggable: true}*/);
-   map = new google.maps.Map(document.getElementById("map"), {
+  function initMap() {
+    const directionsService = new google.maps.DirectionsService();
+    const directionsRenderer = new google.maps.DirectionsRenderer(/*{draggable: true}*/);
+    map = new google.maps.Map(document.getElementById("map"), {
     zoom: 10,
     center: { lat: -33.3504261, lng: -60.2908364 },
   });
@@ -48,7 +53,7 @@ function calculateAndDisplayRoute(directionsService, directionsRenderer) {
   directionsService
     .route({
       origin: '<?php echo $start; ?>',
-      destination: '<?php echo $start; ?>',
+      destination: '<?php echo $end; ?>',
       waypoints: waypts,
       optimizeWaypoints: true,
       travelMode: google.maps.TravelMode.DRIVING,
