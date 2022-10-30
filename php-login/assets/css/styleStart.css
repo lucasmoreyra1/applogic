@@ -1,0 +1,172 @@
+/* Colores */
+
+:root{
+    --blanco:#ffffff;
+    --oscuro: #212121;
+    --primario: #146c43;
+    --secundario: #0a884d;
+    --gris: #757575;
+    --grisSuave: #dddddd
+}
+
+/* Globales */
+html{
+    font-size: 62.5%;
+    box-sizing: border-box;
+
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+body{
+    font-size: 16px; /* 1rem = 10px */
+    font-family: 'Krub', sans-serif;
+    background-image: linear-gradient(to top, var(--grisSuave) 0%, var(--blanco) 100%  );
+}
+
+.sombra{
+    -webkit-box-shadow: 0px 5px 15px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 5px 15px 0px rgba(0,0,0,0.75);
+    box-shadow: 0px 5px 15px 0px rgba(0,0,0,0.75);
+    background-color: var(--blanco);
+    padding: 2rem 7rem ;
+    border-radius: 1rem;
+}
+
+
+/* tamaño texto */
+h1{
+    font-size: 3.8rem;
+    text-align: center;
+}
+h2{
+    font-size: 2.8rem;
+    text-align: center;
+}
+
+h3{
+    font-size: 1.8rem;
+    text-align: center;
+
+}
+
+
+header{
+    padding: 0.1rem;
+    background-color: var(--oscuro);
+    color: var(--blanco)
+}
+
+/* navegacion */
+.nav-bg{
+    background-color: var(--secundario);
+}
+.contenedor{
+    max-width: 90rem;
+    margin: 0 auto;
+}
+
+.navegacion-principal{
+    display: flex; /* se ativa el display flex para utilizar flexbox */
+    flex-direction: column; /* se elije la direccion de la caja colum(align-items para centrar h) o row(permite usar justify-content para centrar h) */
+
+}
+
+/* media query para la navegacion */
+@media (min-width: 768px) {
+    .navegacion-principal{
+        flex-direction: row;
+        justify-content: space-between;
+    }
+}
+
+.navegacion-principal a{
+    display: block;
+    text-align: center;
+
+    color: var(--blanco);
+    text-decoration: none;
+    font-size: 2rem;
+    font-weight: 700;
+    padding: 1rem;
+    transition: .2s;
+}
+
+.navegacion-principal a:hover{
+    background-color: var(--primario);
+    transition: .2s;
+    color: var(--oscuro);
+}
+
+/* contenido imagen central */
+
+.hero{
+    background-image: url(../img/fondogps.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position-y: center;
+    height: 690px;
+    position: relative;
+    margin-bottom: 2rem;
+}
+
+.contenido-hero{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, .5);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.contenido-hero h2, .contenido-hero p {
+    color: var(--blanco);
+}
+
+/* boton contacto */
+
+.boton{
+    background-color: var(--secundario);
+    padding: 1rem 3rem ;
+    border-radius: .8rem;
+    color: var(--blanco);
+    text-decoration: none;
+    font-size: 2rem;
+    margin-top: 2rem;
+    text-transform: uppercase;
+    font-weight: 700;
+    width: 70%;
+    text-align: center;
+}
+@media (min-width: 768px) {
+    .boton{
+        width: auto;
+    }
+}
+
+.boton:hover{
+    background-color: var(--primario);
+    transition: .2s;
+    color: var(--oscuro);
+}
+
+.hijo{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.hijo input{
+    margin: 2rem;
+}
+
+/* display flex,  align items flex end para bajar contenido  */
+
+
+
