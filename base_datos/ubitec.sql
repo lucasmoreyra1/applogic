@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 27-10-2022 a las 04:07:06
+-- Tiempo de generación: 30-10-2022 a las 15:48:11
 -- Versión del servidor: 10.4.24-MariaDB
 -- Versión de PHP: 8.1.6
 
@@ -39,26 +39,38 @@ CREATE TABLE `ruta` (
 --
 
 INSERT INTO `ruta` (`id_ruta`, `direccion`, `orden`, `entregado`) VALUES
-(16, 'Nacion 670, De la Nación, San Nicolás de Los Arroyos, Provincia de Buenos Aires, Argentina', 0, 0),
-(16, 'Bartolomé Mitre 200, San Nicolás de Los Arroyos, Provincia de Buenos Aires, Argentina', 0, 0),
-(18, 'Bartolomé Mitre, San Nicolás de Los Arroyos, Provincia de Buenos Aires, Argentina', 0, 0),
-(18, 'Valle Hermoso, Córdoba, Argentina', 0, 0),
-(22, 'Nacion 670, De la Nación, San Nicolás de Los Arroyos, Provincia de Buenos Aires, Argentina', 0, 0),
-(22, 'Ruta Nacional 177, Villa Constitución, Santa Fe, Argentina', 0, 0),
-(22, 'Villa Constitución, Santa Fe, Argentina', 0, 0),
-(23, 'Mitre, Rosario, Santa Fe, Argentina', 0, 0),
-(23, 'Ruta Nacional 177, Villa Constitución, Santa Fe, Argentina', 0, 0),
-(25, 'Nacion 670, De la Nación, San Nicolás de Los Arroyos, Provincia de Buenos Aires, Argentina', 0, 0),
-(29, 'Nacion 670, De la Nación, San Nicolás de Los Arroyos, Provincia de Buenos Aires, Argentina', 0, 0),
-(30, 'Nacion 670, De la Nación, San Nicolás de Los Arroyos, Provincia de Buenos Aires, Argentina', 0, 0),
-(33, 'Nacion 670, De la Nación, San Nicolás de Los Arroyos, Provincia de Buenos Aires, Argentina', 0, 0),
-(39, 'Nacion 670, De la Nación, San Nicolás de Los Arroyos, Provincia de Buenos Aires, Argentina', 0, 0),
-(39, 'Instituto De Yoga Mirta De Fussi, España, Rosario, Santa Fe, Argentina', 0, 0),
-(39, 'Rosario, Santa Fe, Argentina', 0, 0),
-(44, 'Nacion 670, De la Nación, San Nicolás de Los Arroyos, Provincia de Buenos Aires, Argentina', 0, 0),
-(48, 'Mitre, Rosario, Santa Fe, Argentina', 0, 0),
-(48, 'Mitre, Villa Constitución, Santa Fe, Argentina', 0, 0),
-(48, 'Bartolomé Mitre 564, San Nicolás de Los Arroyos, Provincia de Buenos Aires, Argentina', 0, 0);
+(56, 'terrazzon 653 san nicolas argentina', 0, 0),
+(56, 'Terrazzon 653, San Nicolás, Provincia de Buenos Aires, Argentina', 0, 0),
+(58, 'Bartolomé Mitre, San Nicolás de Los Arroyos, Provincia de Buenos Aires, Argentina', 0, 0),
+(59, 'Nacion 670, De la Nación, San Nicolás de Los Arroyos, Provincia de Buenos Aires, Argentina', 0, 0),
+(65, 'Nacion 670, De la Nación, San Nicolás de Los Arroyos, Provincia de Buenos Aires, Argentina', 0, 0),
+(65, 'Bartolomé Mitre, San Nicolás de Los Arroyos, Provincia de Buenos Aires, Argentina', 0, 0),
+(74, 'Nacion 670, De la Nación, San Nicolás de Los Arroyos, Provincia de Buenos Aires, Argentina', 0, 0),
+(76, 'Bartolomé Mitre, San Nicolás de Los Arroyos, Provincia de Buenos Aires, Argentina', 0, 0),
+(76, 'Nacion 670, De la Nación, San Nicolás de Los Arroyos, Provincia de Buenos Aires, Argentina', 0, 0),
+(77, 'Avenida Falcón, San Nicolás de Los Arroyos, Provincia de Buenos Aires, Argentina', 0, 0),
+(80, 'Mitre, Villa Constitución, Santa Fe, Argentina', 0, 0),
+(81, 'Bartolomé Mitre, San Nicolás de Los Arroyos, Provincia de Buenos Aires, Argentina', 0, 0),
+(83, 'Avenida Falcón, San Nicolás de Los Arroyos, Provincia de Buenos Aires, Argentina', 0, 0),
+(84, 'Bartolomé Mitre, San Nicolás de Los Arroyos, Provincia de Buenos Aires, Argentina', 0, 0),
+(84, 'Avenida Falcón, San Nicolás de Los Arroyos, Provincia de Buenos Aires, Argentina', 0, 0),
+(87, 'Nacion 670, De la Nación, San Nicolás de Los Arroyos, Provincia de Buenos Aires, Argentina', 0, 0),
+(89, '1234', 0, 0),
+(89, '12312', 0, 0),
+(90, '123', 0, 0),
+(91, '123123', 0, 0),
+(93, 'nacion 265 san nicolas de los arroyos', 0, 0),
+(94, 'mitre 200 san nicolas de los arroyos', 0, 0),
+(79, 'Bartolomé Mitre, San Nicolás de Los Arroyos, Provincia de Buenos Aires, Argentina', 0, 0),
+(100, 'Nacion 670, De la Nación, San Nicolás de Los Arroyos, Provincia de Buenos Aires, Argentina', 0, 0),
+(100, 'Avenida Falcón 710, San Nicolás, Provincia de Buenos Aires, Argentina', 0, 0),
+(100, 'savio 321 san nicolas argentina', 0, 0),
+(100, 'savio 347 san nicolas argentina', 0, 0),
+(100, 'roca 389 san nicolas argentina', 0, 0),
+(100, 'terrazzon 484 san nicolas argentina', 0, 0),
+(100, 'terrazzon 585 san nicolas argentina', 0, 0),
+(100, 'alvear 442 san nicolas argentina', 0, 0),
+(101, 'Nacion 670, De la Nación, San Nicolás de Los Arroyos, Provincia de Buenos Aires, Argentina', 0, 0);
 
 -- --------------------------------------------------------
 
@@ -123,7 +135,28 @@ INSERT INTO `users` (`id`, `email`, `password`, `nickname`) VALUES
 (46, '13', '$2y$10$MTrPlaAjmhopIitNdNMxMOgbk1/MezSKtqv8HTY04xD4RWQ4WtrMG', '13'),
 (47, 'reg', '$2y$10$9m1IcG.Phu67vK4ABVsjO.veIBPanGLV33P5QgcLgCS92C761hcQG', 'reg'),
 (48, 'bnm', '$2y$10$0sZ6C2DXJmSsod6OpHuQw.NfGrEP1/.OBR8/X9kDd3kCpRkWRZvq.', 'bnm'),
-(49, '456', '$2y$10$X3I3X1S01ucSPfbKSwNNHuqJnP4WOaQS8t22tJsk.HqT9UGAOLXPi', '456');
+(49, '456', '$2y$10$X3I3X1S01ucSPfbKSwNNHuqJnP4WOaQS8t22tJsk.HqT9UGAOLXPi', '456'),
+(50, 'mm', '$2y$10$O3OeWP6wBQ7v1C6SsBhzr.dG8s9eElPcUp.sgtfedgcUs/T1knIUW', 'mm'),
+(51, 'rr', '$2y$10$BO5/.gnP7EZZiA1G8kUzR./dPIjiyxZ0NIBmISYao71T2h67re7De', 'rr'),
+(52, 'rrr', '$2y$10$QJjY7iFIV9qi8ZGeWMEAaebex2la9LJwC49lBoHQkLFsqj.Sa0goK', 'rr'),
+(53, 'bnm', '$2y$10$jEzOxqghlDHE0Q/HwmLfQeTX87M6.mECygg3SkGJRTMWSCwIaoyrK', 'bnm'),
+(54, '45', '$2y$10$HA9cry7FY.khJZPxqqpaxen82rxl5eowvC1Ec3HszXGqCpaJ2ruSy', '45'),
+(55, 'jk', '$2y$10$B1cJYYRVWH2Z6eotrIOnp.qoi0W/EIbYKi3L0FdDRdp15JM/thLBa', 'jk'),
+(56, '67', '$2y$10$zXjAzhUhT97fZF43hnIcquzM0XSzWLUqjh0n3QyeuySDRjnbiAp5i', '67'),
+(57, 'vbvb', '$2y$10$VMwpou4hAm2MUoa6UhmH1uV.u5jXOHYpbHZMa/8UciModOQjs/7NG', 'vbvb'),
+(58, 'fgh', '$2y$10$JjtNundLBegzfelLJAoTveDJex/E8zIxbeBvt2JP4STRuNtPpzcJ6', 'fgh'),
+(59, 'asdd', '$2y$10$EeuHg18MBNXYj.eaBM7Ase4VHbjxzIZsnjaxdEi71Oplz4HNbUQ/i', 'asdd'),
+(60, 'rt', '$2y$10$4GhuO5wTsW.pRyF74tJ7kes88NUdD6ovxur0Ore9qUld7o05irD3m', 'rt'),
+(61, '678', '$2y$10$31ns.1LqXXEy5TwJFQxGhefjgrKZbjAS9zx.vM7QYQ.gOL7aMVaie', '678'),
+(62, 'rty', '$2y$10$YiSKqFwh/s0L6eLe83y8Fuxnd/wzo7TQ.dAbhWqamLVoWPyFw6cb.', 'rty'),
+(63, 'lll', '$2y$10$CDR5vRyNt0U7JJge2pSaEuMypaER9DC2iOCTqk.EQ7fE/wu21dORm', 'lll'),
+(64, 'tt', '$2y$10$7Bv18w4XAnTrbKhBafeViOSsMbN5xoLF2Es7RPXEIcRmxymyY3T3G', 'tt'),
+(65, 'mn', '$2y$10$Y260XozkCPEwdWE6VGnluexHLsd7O3HfGk7QMJXyoJycVQy9ZeiGa', 'mn'),
+(66, '90', '$2y$10$VWxoXh6yM/OiKCCiwNKrfOX/20U/KdyQcZ3SwwKoAYTL.G27jElCi', '90'),
+(67, 'cvb', '$2y$10$C0IFYsIJjyAQV30IohQZd.2ceGP/wD9g4hxCr8uOSpJ8RjkdLbeHy', 'cvb'),
+(68, 'mjk', '$2y$10$h8fid/EQGyU5sJW7WmEZMeH6DCFYK6dzat6L3CKFZac080bMoQ2mG', 'mjk'),
+(69, '654', '$2y$10$6uAkoV9xOawxFwCnPWz4n.7Da73.TWWNAx/FZIe1pWhqoA6/d96Qu', '654'),
+(70, 'ghj', '$2y$10$3P33o9L6y2QfKJGEg/ncl.dswoEZwlWUGa/ma1GktZTy06nM.6Ek6', 'ghj');
 
 -- --------------------------------------------------------
 
@@ -134,59 +167,59 @@ INSERT INTO `users` (`id`, `email`, `password`, `nickname`) VALUES
 CREATE TABLE `user_ruta` (
   `id_ruta` int(11) NOT NULL,
   `id_user` int(11) NOT NULL,
-  `ruta_inicio` text COLLATE utf8_unicode_ci DEFAULT NULL
+  `ruta_inicio` text COLLATE utf8_unicode_ci DEFAULT NULL,
+  `ruta_final` text COLLATE utf8_unicode_ci DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Volcado de datos para la tabla `user_ruta`
 --
 
-INSERT INTO `user_ruta` (`id_ruta`, `id_user`, `ruta_inicio`) VALUES
-(1, 12, 'mitre 200 san nicolas'),
-(5, 12, ''),
-(6, 10, ''),
-(7, 10, ''),
-(8, 10, ''),
-(9, 9, ''),
-(10, 9, ''),
-(11, 7, ''),
-(12, 7, 'Bartolomé Mitre, San Nicolás de Los Arroyos, Provincia de Buenos Aires, Argentina'),
-(13, 15, ''),
-(14, 15, ''),
-(15, 15, ''),
-(16, 16, ''),
-(17, 17, ''),
-(18, 18, ''),
-(19, 19, ''),
-(20, 20, ''),
-(21, 21, ''),
-(22, 22, ''),
-(23, 23, ''),
-(24, 24, ''),
-(25, 25, NULL),
-(26, 26, 'Asda Hulme Superstore, Princess Road, Hulme, Manchester, Reino Unido'),
-(27, 27, 'Nacion 670, De la Nación, San Nicolás de Los Arroyos, Provincia de Buenos Aires, Argentina'),
-(28, 28, 'Bartolomé Mitre, San Nicolás de Los Arroyos, Provincia de Buenos Aires, Argentina'),
-(29, 29, 'Bartolomé Mitre, San Nicolás de Los Arroyos, Provincia de Buenos Aires, Argentina'),
-(30, 30, 'Bartolomé Mitre, San Nicolás de Los Arroyos, Provincia de Buenos Aires, Argentina'),
-(31, 31, NULL),
-(32, 32, NULL),
-(33, 33, 'Bartolomé Mitre, San Nicolás de Los Arroyos, Provincia de Buenos Aires, Argentina'),
-(34, 34, NULL),
-(35, 35, 'Bartolomé Mitre, San Nicolás de Los Arroyos, Provincia de Buenos Aires, Argentina'),
-(36, 36, 'Nacion 670, De la Nación, San Nicolás de Los Arroyos, Provincia de Buenos Aires, Argentina'),
-(37, 37, NULL),
-(38, 38, 'Bartolomé Mitre, San Nicolás de Los Arroyos, Provincia de Buenos Aires, Argentina'),
-(39, 39, 'Bartolomé Mitre, San Nicolás de Los Arroyos, Provincia de Buenos Aires, Argentina'),
-(40, 40, NULL),
-(41, 41, NULL),
-(42, 43, NULL),
-(43, 44, 'Nacion 670, De la Nación, San Nicolás de Los Arroyos, Provincia de Buenos Aires, Argentina'),
-(44, 45, NULL),
-(45, 46, 'Nacion 670, De la Nación, San Nicolás de Los Arroyos, Provincia de Buenos Aires, Argentina'),
-(46, 47, 'Bartolomé Mitre, San Nicolás de Los Arroyos, Provincia de Buenos Aires, Argentina'),
-(47, 48, 'Bartolomé Mitre, San Nicolás de Los Arroyos, Provincia de Buenos Aires, Argentina'),
-(48, 49, 'Bartolomé Mitre, San Nicolás de Los Arroyos, Provincia de Buenos Aires, Argentina');
+INSERT INTO `user_ruta` (`id_ruta`, `id_user`, `ruta_inicio`, `ruta_final`) VALUES
+(56, 7, 'Ruta Nacional 177, Villa Constitución, Santa Fe, Argentina', 'Avenida Falcón 712, San Nicolás de Los Arroyos, Provincia de Buenos Aires, Argentina'),
+(57, 61, 'Bartolomé Mitre, San Nicolás de Los Arroyos, Provincia de Buenos Aires, Argentina', 'Nacion 670, De la Nación, San Nicolás de Los Arroyos, Provincia de Buenos Aires, Argentina'),
+(58, 62, 'Avenida Falcón, San Nicolás de Los Arroyos, Provincia de Buenos Aires, Argentina', 'Avenida Presidente Juan Domingo Perón, San Nicolás de Los Arroyos, Provincia de Buenos Aires, Argentina'),
+(59, 28, 'Bartolomé Mitre, San Nicolás de Los Arroyos, Provincia de Buenos Aires, Argentina', 'Bartolomé Mitre, San Nicolás de Los Arroyos, Provincia de Buenos Aires, Argentina'),
+(60, 28, NULL, NULL),
+(61, 28, NULL, NULL),
+(62, 28, NULL, NULL),
+(63, 28, NULL, NULL),
+(64, 28, NULL, NULL),
+(65, 64, 'Bartolomé Mitre, San Nicolás de Los Arroyos, Provincia de Buenos Aires, Argentina', 'Bartolomé Mitre, San Nicolás de Los Arroyos, Provincia de Buenos Aires, Argentina'),
+(66, 64, NULL, NULL),
+(67, 64, NULL, NULL),
+(71, 64, NULL, NULL),
+(72, 64, NULL, NULL),
+(73, 64, NULL, NULL),
+(74, 64, NULL, NULL),
+(75, 64, NULL, NULL),
+(76, 64, 'Bartolomé Mitre, San Nicolás de Los Arroyos, Provincia de Buenos Aires, Argentina', 'Nacion 670, De la Nación, San Nicolás de Los Arroyos, Provincia de Buenos Aires, Argentina'),
+(77, 64, 'Bartolomé Mitre, San Nicolás de Los Arroyos, Provincia de Buenos Aires, Argentina', 'Nacion 670, De la Nación, San Nicolás de Los Arroyos, Provincia de Buenos Aires, Argentina'),
+(78, 7, 'Bartolomé Mitre, San Nicolás de Los Arroyos, Provincia de Buenos Aires, Argentina', 'Nacion 670, De la Nación, San Nicolás de Los Arroyos, Provincia de Buenos Aires, Argentina'),
+(79, 7, 'Instituto De Yoga Mirta De Fussi, España, Rosario, Santa Fe, Argentina', 'Instituto De Yoga Mirta De Fussi, España, Rosario, Santa Fe, Argentina'),
+(80, 29, 'Bartolomé Mitre, San Nicolás de Los Arroyos, Provincia de Buenos Aires, Argentina', 'Bartolomé Mitre, San Nicolás de Los Arroyos, Provincia de Buenos Aires, Argentina'),
+(81, 29, 'Nacion 670, De la Nación, San Nicolás de Los Arroyos, Provincia de Buenos Aires, Argentina', 'Nacion 670, De la Nación, San Nicolás de Los Arroyos, Provincia de Buenos Aires, Argentina'),
+(82, 29, NULL, NULL),
+(83, 29, 'Bartolomé Mitre, San Nicolás de Los Arroyos, Provincia de Buenos Aires, Argentina', 'Nacion 670, De la Nación, San Nicolás de Los Arroyos, Provincia de Buenos Aires, Argentina'),
+(84, 29, 'Bartolomé Mitre, San Nicolás de Los Arroyos, Provincia de Buenos Aires, Argentina', 'Nacion 670, De la Nación, San Nicolás de Los Arroyos, Provincia de Buenos Aires, Argentina'),
+(85, 29, NULL, NULL),
+(86, 29, NULL, NULL),
+(87, 29, 'Bartolomé Mitre, San Nicolás de Los Arroyos, Provincia de Buenos Aires, Argentina', 'Bartolomé Mitre, San Nicolás de Los Arroyos, Provincia de Buenos Aires, Argentina'),
+(88, 29, 'Bartolomé Mitre, San Nicolás de Los Arroyos, Provincia de Buenos Aires, Argentina', 'Nacion 670, De la Nación, San Nicolás de Los Arroyos, Provincia de Buenos Aires, Argentina'),
+(89, 66, 'mitre 200', 'mitre 200'),
+(90, 66, '123', '123'),
+(91, 66, '123', '123'),
+(92, 66, '123', '123'),
+(93, 67, 'mitre', 'mitre'),
+(94, 67, 'nacion', 'nacion'),
+(95, 67, NULL, NULL),
+(96, 7, NULL, NULL),
+(97, 7, 'Bartolomé Mitre, San Nicolás de Los Arroyos, Provincia de Buenos Aires, Argentina', 'Bartolomé Mitre, San Nicolás de Los Arroyos, Provincia de Buenos Aires, Argentina'),
+(98, 7, 'Bartolomé Mitre, San Nicolás de Los Arroyos, Provincia de Buenos Aires, Argentina', 'Bartolomé Mitre, San Nicolás de Los Arroyos, Provincia de Buenos Aires, Argentina'),
+(99, 68, NULL, NULL),
+(100, 69, 'Bartolomé Mitre, San Nicolás de Los Arroyos, Provincia de Buenos Aires, Argentina', 'Bartolomé Mitre, San Nicolás de Los Arroyos, Provincia de Buenos Aires, Argentina'),
+(101, 70, 'Bartolomé Mitre, San Nicolás de Los Arroyos, Provincia de Buenos Aires, Argentina', 'Bartolomé Mitre, San Nicolás de Los Arroyos, Provincia de Buenos Aires, Argentina'),
+(102, 70, 'Avenida Falcón, San Nicolás de Los Arroyos, Provincia de Buenos Aires, Argentina', 'Avenida Falcón, San Nicolás de Los Arroyos, Provincia de Buenos Aires, Argentina');
 
 --
 -- Índices para tablas volcadas
@@ -219,13 +252,13 @@ ALTER TABLE `user_ruta`
 -- AUTO_INCREMENT de la tabla `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=50;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=71;
 
 --
 -- AUTO_INCREMENT de la tabla `user_ruta`
 --
 ALTER TABLE `user_ruta`
-  MODIFY `id_ruta` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=49;
+  MODIFY `id_ruta` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=103;
 
 --
 -- Restricciones para tablas volcadas
