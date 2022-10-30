@@ -25,7 +25,7 @@
         <meta charset="UTF-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-		<title>Mapa</title>
+		<title>Ubitec</title>
 		<link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href=" https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;1,700&display=swap" rel="stylesheet">
@@ -43,7 +43,7 @@
     	<?php
             require 'partials/header.php';
         ?>
-        <?php if(!empty($user)): ?>
+        <?php if(!empty($user)): ?> <!-- si los resultados no estan vacios va a mostrar la pagina principal, sino la pagina de inicio para ingresar -->
 			<?php require 'bd.php';?>
 
 			<div class="deslogear"><a href="logout.php">Log Out</a></div>
@@ -67,7 +67,7 @@
 							<input type="text" id="search_input" name="searchEnd"  placeholder="Ingrese direccion final">
 							<input type="submit"  id="add_end" value="Añadir">
 						<?php
-							//evalua si estan ambas rutas ingresadas
+							//evalua si estan ambas rutas ingresadas para pedir las direcciones
 							elseif(!empty($_SESSION['startEnd']['ruta_final']) && !empty($_SESSION['startEnd']['ruta_inicio'])):
 						?>
 							<input type="text" id="search_input" name="searchAddress"  placeholder="Por favor ingrese la direccion">
@@ -89,7 +89,7 @@
 								<input type="submit" name="change_start" value="Cambiar ruta inicio" />
 							</form>
 						</div>
-						<!-- evalua si la ruta de inicio fue ingresada para mostrarla con su boton de cambiar -->
+						<!-- evalua si la ruta final fue ingresada para mostrarla con su boton de cambiar -->
 						<?php if(!empty($_SESSION['startEnd']['ruta_final'])): ?>
 							<div class="cajados container">
 								<form method="POST">
@@ -106,7 +106,7 @@
 				<div id="map"></div>
 					<div class="info">
 						<?php
-							//evalua si hay direccion de inicio o alguna direccion cargada para mostrarla
+							//evalua si hay direccion de inicio o alguna direccion cargada para mostrar la estructura y tabla
 							if(!empty($_SESSION['direc']) && !empty($_SESSION['startEnd']['ruta_inicio'])):
 						?>
 						<table>
@@ -119,10 +119,10 @@
 								?>
 								<form method="POST">
 									<tr><td> 
-										<?php echo $_SESSION['direc'][$var]; ?> 
+										<?php echo $_SESSION['direc'][$var]; ?>
 										<input type="hidden" name="deleteValue" value="<?php echo $_SESSION['direc'][$var]; ?>" />
 										<label class="eliminar"><input type='checkbox'><div class='check'></div></label>
-										<input type="submit" name="deleteOne" class="eliminar" value="Eliminar">
+										<input type="submit" name="deleteOne" class="eliminar" value="Eliminar"><!--boton para eliminar individual -->
 									</td></tr>
 
 								</form>
@@ -130,11 +130,11 @@
 									endfor;
 								?>
 
-
+							<!-- boton ordenar y mostrar -->
 							<input type="submit" id="submit" value="Ordenar y mostrar" />
 
 						</table>
-
+						<!-- boton eliminar toodo -->
 						<form method="POST">
 							<input type="submit" id="delete" name="delete" value="Eliminar todo" />
 							<input type="submit" id="new" name="new" value="Nueva Ruta" />
@@ -150,6 +150,7 @@
 				require 'script.php';
 			?>
 			<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=places&key=AIzaSyDGc0UBAR_Y30fX31EvaU65KATMx0c0ItI&callback=initMap&v=weekly"></script>
+			<!-- llama a la pagina de inicio si el usuario no entro -->
 		<?php else: header('Location: ./partials/startPage.php');?>
 
         <?php endif ?>
