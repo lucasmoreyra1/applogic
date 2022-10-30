@@ -3,7 +3,6 @@
 
     require 'database.php';//llama a la conexion de la base de datos
 
-    // require 'partials/functions.php'; //geolocalizacion con api
 
     if(isset($_SESSION['user_id'])){//login busca el usuario
         $records = $conn->prepare('SELECT id, email, password, nickname FROM users WHERE id =:id');
@@ -17,8 +16,7 @@
         }
     }
         require 'partials/partial.php';//guarda los datos de las direcciones
-        // require 'ordenar.php';// asigna latitud y longitud en una variable $coords
-		// require 'script.php';
+
 ?>
 
 <!DOCTYPE html>
@@ -63,11 +61,13 @@
 
 						<?php endif; ?>
 						<?php
+							//evalua si esta vacia la ruta final para pedir que sea ingresada (corregir boton añadir)
 							if(empty($_SESSION['startEnd']['ruta_final']) && !empty($_SESSION['startEnd']['ruta_inicio'])):
 						?>
 							<input type="text" id="search_input" name="searchEnd"  placeholder="Ingrese direccion final">
 							<input type="submit"  id="add_end" value="Añadir">
 						<?php
+							//evalua si estan ambas rutas ingresadas
 							elseif(!empty($_SESSION['startEnd']['ruta_final']) && !empty($_SESSION['startEnd']['ruta_inicio'])):
 						?>
 							<input type="text" id="search_input" name="searchAddress"  placeholder="Por favor ingrese la direccion">
@@ -79,7 +79,7 @@
 					</form>
 				</div>
 				<?php
-						//evalua si la ruta de inicio fue ingresada
+						//evalua si la ruta de inicio fue ingresada para mostrarla con su boton de cambiar
 					if(!empty($_SESSION['startEnd']['ruta_inicio'])):
 				?>
 					<div class="container_padre">
@@ -89,7 +89,7 @@
 								<input type="submit" name="change_start" value="Cambiar ruta inicio" />
 							</form>
 						</div>
-
+						<!-- evalua si la ruta de inicio fue ingresada para mostrarla con su boton de cambiar -->
 						<?php if(!empty($_SESSION['startEnd']['ruta_final'])): ?>
 							<div class="cajados container">
 								<form method="POST">
@@ -106,6 +106,7 @@
 				<div id="map"></div>
 					<div class="info">
 						<?php
+							//evalua si hay direccion de inicio o alguna direccion cargada para mostrarla
 							if(!empty($_SESSION['direc']) && !empty($_SESSION['startEnd']['ruta_inicio'])):
 						?>
 						<table>
