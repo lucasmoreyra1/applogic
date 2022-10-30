@@ -1,3 +1,3 @@
 <header>
-    <div class="logogps"><h2><span>UBITEC</span></h2></div>
+    <div class="logogps"><span>UBITEC</span></div>
 </header>
