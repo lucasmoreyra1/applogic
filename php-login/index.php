@@ -65,7 +65,7 @@
 							if(empty($_SESSION['startEnd']['ruta_final']) && !empty($_SESSION['startEnd']['ruta_inicio'])):
 						?>
 							<input type="text" id="search_input" name="searchEnd"  placeholder="Ingrese direccion final">
-							<input type="submit"  id="add_end" value="Añadir">
+							<input type="submit" id="add_end" value="Añadir">
 						<?php
 							//evalua si estan ambas rutas ingresadas para pedir las direcciones
 							elseif(!empty($_SESSION['startEnd']['ruta_final']) && !empty($_SESSION['startEnd']['ruta_inicio'])):

@@ -34,7 +34,7 @@
     $_SESSION['direc'] = searchDirections($_SESSION['id_ruta']['id_ruta']);//busca las direcciones por id_ruta si no hay se devuelve un array vacio
 
 
-    if(isset($_POST['delete'])){//borrar toda la tabla la consulta debolvera conjunto vacio
+    if(isset($_POST['delete'])){//borrar toda la tabla la consulta devolvera conjunto vacio
         $_SESSION['direc'] = deleteAll($_SESSION['id_ruta']['id_ruta']);
     }
 

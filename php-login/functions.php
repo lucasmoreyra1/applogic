@@ -37,19 +37,7 @@ use LDAP\Result;
             return;
         }
 
-        //trae las direcciones desde la base de datos
-        function AsearchDirections($conn, $id_ruta){
-            $sql = "SELECT ruta.direccion FROM ruta INNER JOIN user_ruta ON user_ruta.id_ruta = ruta.id_ruta WHERE ruta.id_ruta=:id_ruta";
-            $stmt = $conn->prepare($sql);
-            $stmt->bindParam(':id_ruta', $id_ruta);
-            $stmt->execute();
-            $results = $stmt->fetch(PDO::FETCH_ASSOC);
-            return $results;
-        }
-
-
-
-
+        //trae las direcciones desde la base de datos y devuelve un array 
         function searchDirections($id_ruta){
             $link = mysqli_connect("localhost", "root", "");
             mysqli_select_db($link, "ubitec");
@@ -72,6 +60,7 @@ use LDAP\Result;
 
         }
 
+        //elimina todas las direcciones que coincidan con el parametro
         function deleteAll($id_ruta){
             $link = mysqli_connect("localhost", "root", "");
             mysqli_select_db($link, "ubitec");
@@ -81,6 +70,7 @@ use LDAP\Result;
             return array();
         }
 
+        //elimina la direccion que coincide con id_ruta y la direccion
         function deleteOne($direccion, $id_ruta){
             $link = mysqli_connect("localhost", "root", "");
             mysqli_select_db($link, "ubitec");
@@ -89,6 +79,7 @@ use LDAP\Result;
             mysqli_close($link);
             return;
         }
+
         //$rutaIoF string que indica la tabla que se cargara la direccion ruta_inicio o ruta_final
         function loadExtremes($conn ,$id_ruta, $direccion, $rutaIoF){
             $load = "UPDATE user_ruta SET $rutaIoF=:direccion WHERE id_ruta=:id_ruta";
@@ -116,6 +107,7 @@ use LDAP\Result;
 
         }
 
+        //crea un nuevo id_ruta
         function newId_ruta($conn, $userId){
             $sql = "INSERT INTO user_ruta (id_user) VALUES (:mostrar)";
             $stmt = $conn->prepare($sql);
