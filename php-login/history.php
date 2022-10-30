@@ -12,6 +12,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
     <title>Document</title>
+    <style>
+        body{
+            background-image: url('./assets/css/fondoindex.jpg');
+            background-repeat: repeat-y;
+        }
+    </style>
 </head>
 <body>
     <?php 
