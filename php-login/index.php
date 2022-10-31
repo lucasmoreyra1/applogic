@@ -29,14 +29,15 @@
 		<link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href=" https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;1,700&display=swap" rel="stylesheet">
-		<script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+		<script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>}
+		<script src="https://kit.fontawesome.com/3f6f78b811.js" crossorigin="anonymous"></script>
         <!-- playground-hide -->
         <script>
         const process = { env: {} };
         process.env.GOOGLE_MAPS_API_KEY =
             "AIzaSyB41DRUbKWJHPxaFjMAwdrzWzbVKartNGg";
         </script>
-		<link rel="stylesheet" type="text/css" href="assets/css/style.css">
+		<link rel="stylesheet" type="text/css" href="./assets/css/style.css">
 		<script type="module" src="/script.php"></script>
     </head>
     <body class="fondo">
@@ -82,8 +83,8 @@
 						//evalua si la ruta de inicio fue ingresada para mostrarla con su boton de cambiar
 					if(!empty($_SESSION['startEnd']['ruta_inicio'])):
 				?>
-					<div class="container_padre">
-						<div class="cajados container">
+					<div class="contenedor">
+						<div class="cajatres">
 							<form method="POST">
 								<label for="start">Direccion de comienzo: <?php echo $_SESSION['startEnd']['ruta_inicio']; ?> </label>
 								<input type="submit" name="change_start" value="Cambiar ruta inicio" />
@@ -91,7 +92,7 @@
 						</div>
 						<!-- evalua si la ruta final fue ingresada para mostrarla con su boton de cambiar -->
 						<?php if(!empty($_SESSION['startEnd']['ruta_final'])): ?>
-							<div class="cajados container1">
+							<div class="cajatres">
 								<form method="POST">
 									<label for="start">Direccion Final: <?php echo $_SESSION['startEnd']['ruta_final']; ?> </label>
 									<input type="submit" name="change_end" value="Cambiar ruta Final" />
@@ -121,27 +122,24 @@
 									<tr><td> 
 										<?php echo $_SESSION['direc'][$var]; ?>
 										<input type="hidden" name="deleteValue" value="<?php echo $_SESSION['direc'][$var]; ?>" />
-										<label class="eliminar"><input type='checkbox'><div class='check'></div></label>
-										<input type="submit" name="deleteOne" class="eliminar" value="Eliminar"><!--boton para eliminar individual -->
+										<div class="eliminar">
+											<input type="submit" name="deleteOne" value="Eliminar"><!--boton para eliminar individual -->
+											<label><input type='checkbox'><div class='check'></div></label>
+										</div>
 									</td></tr>
-
 								</form>
 								<?php
 									endfor;
 								?>
-
 							<!-- boton ordenar y mostrar -->
 							<input type="submit" id="submit" value="Ordenar y mostrar" />
-
 						</table>
 						<!-- boton eliminar toodo -->
 						<form method="POST">
 							<input type="submit" id="delete" name="delete" value="Eliminar todo" />
 							<input type="submit" id="new" name="new" value="Nueva Ruta" />
 						</form>
-
 						<div id="directions-panel"><strong>Rutas ordenadas</strong></div>
-
 						<?php endif; ?>
 					</div>
 			</div>
@@ -154,37 +152,5 @@
 		<?php else: header('Location: ./partials/startPage.php');?>
 
         <?php endif ?>
-        <!--Reloj v1, solo se activa al cargar la pagina
-        <div>
-			<div id="tiempo">0:00:00</div>
-		</div>
-        <script>
-			let tiempoRef = Date.now()
-			let cronometrar = true
-			let acumulado = 0
-
-			setInterval(() => {
-				let tiempo = document.getElementById("tiempo")
-				if (cronometrar) {
-					acumulado += Date.now() - tiempoRef
-				}
-				tiempoRef = Date.now()
-				tiempo.innerHTML = formatearMS(acumulado)
-			}, 10 / 60);
-
-			function formatearMS(tiempo_ms) {
-				let MS = tiempo_ms % 1
-			  
-				let St = Math.floor(((tiempo_ms - MS) / 1000))
-			  
-				let S = St%60
-				let M = Math.floor((St / 60) % 60)
-				let H = Math.floor((St/60 / 60))
-				Number.prototype.ceros = function (n) {
-					return (this + "").padStart(n, 0)
-				}
-				return H.ceros(1) + ":" + M.ceros(2) + ":" + S.ceros(2)
-			}
-		</script>-->
     </body>
 </html>
