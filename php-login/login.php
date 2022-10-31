@@ -2,7 +2,7 @@
     session_start();
 
     if(isset($_SESSION['user_id'])){
-        header('Location: ../php-login');
+        header('Location: index.php');
     }
 
     require 'database.php';
@@ -17,9 +17,9 @@
 
         if(is_countable($results) > 0 && password_verify($_POST['password'], $results['password'] ) ){
             $_SESSION['user_id'] = $results['id'];
-            header('Location: ../php-login/index.php');
+            header('Location: index.php');
         }else{
-            $message = '<span class="mensaje">Tu correo o contraseña son incorrectos.</span>';
+            $message = 'Tu correo o contraseña son incorrectos.';
         }
     }
 ?>
@@ -35,7 +35,7 @@
         <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;1,700&display=swap" rel="stylesheet">
         <link rel="stylesheet" type="text/css" href="assets/css/style.css">
     </head>
-    <body class="fondo1">
+    <body class="fondo">
         <?php
             require 'partials/header.php';
         ?>
@@ -44,10 +44,9 @@
             <input type="text" name="email" placeholder="Ingrese su email">
             <input type="password" name="password" placeholder="Ingrese su contraseña">
             <input type="submit" value="Entrar">
-            <a href="./signup.php"><input type="button" value="Registrarse"></a>
-            </br>
+            <input type="button" value="Regresar" onClick="history.go(-1);"><!--Boton para regresar a página anterior-->
             <?php if(!empty($message)): ?>
-                <p><?= $message ?></p>
+                <div class="mensaje"><?= $message ?></div>
             <?php endif; ?>
         </form>
     </body>

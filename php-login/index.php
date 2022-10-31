@@ -1,10 +1,9 @@
 <?php
     session_start();
 
-    require 'database.php';//llama a la conexion de la base de datos
+    require 'database.php';//Llama a la conexión de la base de datos
 
-
-    if(isset($_SESSION['user_id'])){//login busca el usuario
+    if(isset($_SESSION['user_id'])){//Login busca a el Usuario
         $records = $conn->prepare('SELECT id, email, password, nickname FROM users WHERE id =:id');
         $records->bindParam(':id', $_SESSION['user_id']);
         $records->execute();
@@ -15,8 +14,7 @@
             $user = $results;
         }
     }
-        require 'partials/partial.php';//guarda los datos de las direcciones
-
+        require 'partials/partial.php';//Guarda los datos de las direcciones
 ?>
 
 <!DOCTYPE html>
@@ -25,7 +23,7 @@
         <meta charset="UTF-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-		<title>Ubitec</title>
+		<title>Ubitec - Entrega de correo</title>
 		<link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href=" https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;1,700&display=swap" rel="stylesheet">
@@ -36,23 +34,22 @@
         process.env.GOOGLE_MAPS_API_KEY =
             "AIzaSyB41DRUbKWJHPxaFjMAwdrzWzbVKartNGg";
         </script>
-		<link rel="stylesheet" type="text/css" href="assets/css/style.css">
+		<link rel="stylesheet" type="text/css" href="./assets/css/style.css">
 		<script type="module" src="/script.php"></script>
     </head>
     <body class="fondo">
     	<?php
-            require 'partials/header.php';
+            require 'partials/header.php';//Llama a un header independiente
         ?>
-        <?php if(!empty($user)): ?> <!-- si los resultados no estan vacios va a mostrar la pagina principal, sino la pagina de inicio para ingresar -->
+        <?php if(!empty($user)): ?> <!-- si los resultados no estan vacios va a mostrar la 
+        pagina principal, sino la pagina de inicio para ingresar -->
 			<?php require 'bd.php';?>
-
-			<div class="deslogear"><a href="logout.php">Log Out</a></div>
-			<div class="historial"><a href="history.php">Historial</a></div>
-			<div class="account"><a href="#">Mi cuenta</a></div>
-
-				<div class="cajados">
-					<form method="post">
-						<?php
+			<a href="logout.php"><button class="deslogear">Log Out</button></a> <!--Botón de deslogeo-->
+			<a href="history.php"><button class="historial">Historial</button></a>
+			<a href="#"><button class="account">Mi cuenta</button></a>
+			<div class="cajados">
+				<form method="post"><!--form para ingresar dirección de comienzo y direcciones de entrega-->
+					<?php
 							//evalua si la ruta de inicio fue ingresada
 							if(empty($_SESSION['startEnd']['ruta_inicio'])):
 						?>
@@ -151,40 +148,7 @@
 			?>
 			<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=places&key=AIzaSyDGc0UBAR_Y30fX31EvaU65KATMx0c0ItI&callback=initMap&v=weekly"></script>
 			<!-- llama a la pagina de inicio si el usuario no entro -->
-		<?php else: header('Location: ./partials/startPage.php');?>
-
+		<?php else: header('Location: ./startpage.php');?>
         <?php endif ?>
-        <!--Reloj v1, solo se activa al cargar la pagina
-        <div>
-			<div id="tiempo">0:00:00</div>
-		</div>
-        <script>
-			let tiempoRef = Date.now()
-			let cronometrar = true
-			let acumulado = 0
-
-			setInterval(() => {
-				let tiempo = document.getElementById("tiempo")
-				if (cronometrar) {
-					acumulado += Date.now() - tiempoRef
-				}
-				tiempoRef = Date.now()
-				tiempo.innerHTML = formatearMS(acumulado)
-			}, 10 / 60);
-
-			function formatearMS(tiempo_ms) {
-				let MS = tiempo_ms % 1
-			  
-				let St = Math.floor(((tiempo_ms - MS) / 1000))
-			  
-				let S = St%60
-				let M = Math.floor((St / 60) % 60)
-				let H = Math.floor((St/60 / 60))
-				Number.prototype.ceros = function (n) {
-					return (this + "").padStart(n, 0)
-				}
-				return H.ceros(1) + ":" + M.ceros(2) + ":" + S.ceros(2)
-			}
-		</script>-->
     </body>
 </html>
