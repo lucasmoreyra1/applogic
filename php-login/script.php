@@ -17,7 +17,7 @@
 ?>
 <script>
   var map;
-  function initMap() {//inicia el mapa
+  function initMap() {
     const directionsService = new google.maps.DirectionsService();
     const directionsRenderer = new google.maps.DirectionsRenderer(/*{draggable: true}*/);
     map = new google.maps.Map(document.getElementById("map"), {
@@ -28,7 +28,7 @@
 
 
   directionsRenderer.setMap(map);
-  document.getElementById("submit").addEventListener("click", () => {//obtiene si se presiono el boton ordenar 
+  document.getElementById("submit").addEventListener("click", () => {
     calculateAndDisplayRoute(directionsService, directionsRenderer);
   });
 
