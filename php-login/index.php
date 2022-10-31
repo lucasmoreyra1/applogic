@@ -148,7 +148,7 @@
 			?>
 			<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=places&key=AIzaSyDGc0UBAR_Y30fX31EvaU65KATMx0c0ItI&callback=initMap&v=weekly"></script>
 			<!-- llama a la pagina de inicio si el usuario no entro -->
-		<?php else: header('Location: ./startpage.php');?>
+		<?php else: header('Location: partials/startPage.php');?>
         <?php endif ?>
     </body>
 </html>
