@@ -10,18 +10,23 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="./assets/css/styleStart.css">
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+
     <title>Document</title>
     <style>
-        body{
-            background-image: url('./assets/css/fondoindex.jpg');
-            background-repeat: repeat-y;
+        header{
+            background-image: none;
         }
+
     </style>
 </head>
-<body>
+<body class="fondo">
     <?php 
         require './partials/header.php';
+        echo '<div class="return" >';
+            echo '<a href="../php-login/" class="boton">volver</a>';
+        echo '</div>';
         for($i=count($allRoutes)-1; $i>=0; $i--):
             $directions = searchDirections($allRoutes[$i]);
             $startEnd = reciveExtremes($conn, $allRoutes[$i]);

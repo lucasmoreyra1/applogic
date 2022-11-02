@@ -17,9 +17,9 @@
 
         if(is_countable($results) > 0 && password_verify($_POST['password'], $results['password'] ) ){
             $_SESSION['user_id'] = $results['id'];
-            header('Location: index.php');
+            header('Location: ../php-login/index.php');
         }else{
-            $message = 'Tu correo o contraseña son incorrectos.';
+            $message = '<span class="mensaje">Tu correo o contraseña son incorrectos.</span>';
         }
     }
 ?>
@@ -47,7 +47,7 @@
             <a href="./signup.php"><input type="button" value="Registrarse"></a>
             </br>
             <?php if(!empty($message)): ?>
-                <div class="mensaje"><?= $message ?></div>
+                <p><?= $message ?></p>
             <?php endif; ?>
         </form>
     </body>

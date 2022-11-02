@@ -29,15 +29,14 @@
 		<link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href=" https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;1,700&display=swap" rel="stylesheet">
-		<script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>}
-		<script src="https://kit.fontawesome.com/3f6f78b811.js" crossorigin="anonymous"></script>
+		<script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
         <!-- playground-hide -->
         <script>
         const process = { env: {} };
         process.env.GOOGLE_MAPS_API_KEY =
             "AIzaSyB41DRUbKWJHPxaFjMAwdrzWzbVKartNGg";
         </script>
-		<link rel="stylesheet" type="text/css" href="./assets/css/style.css">
+		<link rel="stylesheet" type="text/css" href="assets/css/style.css">
 		<script type="module" src="/script.php"></script>
     </head>
     <body class="fondo">
@@ -49,7 +48,7 @@
 
 			<a href="logout.php"><button class="deslogear">Log Out</button></a> <!--Botón de deslogeo-->
 			<a href="history.php"><button class="historial">Historial</button></a>
-			<a href="#"><button class="account">Mi cuenta</button></a>
+			<a href="./partials/account.php"><button class="account">Mi cuenta</button></a>
 
 				<div class="cajados">
 					<form method="post">
@@ -103,7 +102,7 @@
 				<?php
 						endif;
 				?>
-			<div class="map-table">
+			<div class="map-table" name="map">
 				<div id="map"></div>
 					<div class="info">
 						<?php
@@ -131,15 +130,19 @@
 								<?php
 									endfor;
 								?>
+
 							<!-- boton ordenar y mostrar -->
 							<input type="submit" id="submit" value="Ordenar y mostrar" />
+
 						</table>
 						<!-- boton eliminar toodo -->
 						<form method="POST">
 							<input type="submit" id="delete" name="delete" value="Eliminar todo" />
 							<input type="submit" id="new" name="new" value="Nueva Ruta" />
 						</form>
+
 						<div id="directions-panel"><strong>Rutas ordenadas</strong></div>
+
 						<?php endif; ?>
 					</div>
 			</div>
@@ -149,8 +152,41 @@
 			?>
 			<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=places&key=AIzaSyDGc0UBAR_Y30fX31EvaU65KATMx0c0ItI&callback=initMap&v=weekly"></script>
 			<!-- llama a la pagina de inicio si el usuario no entro -->
-		<?php else: header('Location: ./partials/startPage.php');?>
+
+		<?php require './partials/footer.php'; else: header('Location: ./partials/startPage.php');?>
 
         <?php endif ?>
+        <!--Reloj v1, solo se activa al cargar la pagina
+        <div>
+			<div id="tiempo">0:00:00</div>
+		</div>
+        <script>
+			let tiempoRef = Date.now()
+			let cronometrar = true
+			let acumulado = 0
+
+			setInterval(() => {
+				let tiempo = document.getElementById("tiempo")
+				if (cronometrar) {
+					acumulado += Date.now() - tiempoRef
+				}
+				tiempoRef = Date.now()
+				tiempo.innerHTML = formatearMS(acumulado)
+			}, 10 / 60);
+
+			function formatearMS(tiempo_ms) {
+				let MS = tiempo_ms % 1
+			  
+				let St = Math.floor(((tiempo_ms - MS) / 1000))
+			  
+				let S = St%60
+				let M = Math.floor((St / 60) % 60)
+				let H = Math.floor((St/60 / 60))
+				Number.prototype.ceros = function (n) {
+					return (this + "").padStart(n, 0)
+				}
+				return H.ceros(1) + ":" + M.ceros(2) + ":" + S.ceros(2)
+			}
+		</script>-->
     </body>
 </html>

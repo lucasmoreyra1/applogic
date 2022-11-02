@@ -114,5 +114,41 @@ use LDAP\Result;
             $stmt->execute();
         }
 
+        function selectUser($conn, $email){
+            $records = $conn->prepare('SELECT id FROM users WHERE email=:email');
+            $records->bindParam(':email', $email);
+            $records->execute();
+            $results = $records->fetch(PDO::FETCH_ASSOC);
+            if(is_countable($results) > 0){
+                return $results['id'];
+            }else return null;
+        }
 
+        function modifiEmail($conn, $email, $id_user){
+            $load = "UPDATE users JOIN user_ruta ON users.id = user_ruta.id_user SET email=:email  WHERE id_user=:id_user";
+            $stmt = $conn->prepare($load);
+            $stmt ->bindParam(':id_user', $id_user);
+            $stmt ->bindParam(':email', $email);
+            $result = $stmt->execute();
+            return $result;
+        }
+
+        function modifiPassword($conn, $password, $id_user){
+            $load = "UPDATE users JOIN user_ruta ON users.id = user_ruta.id_user SET password=:password WHERE id_user=:id_user";
+            $stmt = $conn->prepare($load);
+            $stmt ->bindParam(':id_user', $id_user);
+            $password = password_hash($_POST['password'], PASSWORD_BCRYPT);
+            $stmt->bindParam(':password', $password);
+            $result = $stmt->execute();
+            return $result;
+        }
+
+        function selectEmail($conn, $id_ruta){
+            $load = "SELECT users.email FROM users JOIN user_ruta ON users.id = user_ruta.id_user WHERE user_ruta.id_user=:id_user";
+            $stmt = $conn->prepare($load);
+            $stmt->bindParam(':id_user', $id_ruta);
+            $stmt->execute();
+            $results = $stmt->fetch(PDO::FETCH_ASSOC);
+            return $results;
+        }
 ?>

@@ -1,23 +1,39 @@
 <?php
     require 'database.php';
+    require 'functions.php';
 
     $message = '';
 
+    if(!empty($_POST['email'])){
+        $exist = selectUser($conn, $_POST['email']);
+    }
 
-    if(!empty($_POST['email']) && !empty($_POST['password']) && !empty($_POST['nickname'])){
-        $sql = "INSERT INTO users (email, password, nickname) VALUES (:email, :password, :nickname)";
-        $stmt = $conn->prepare($sql);
-        $stmt-> bindParam(':email', $_POST['email']);
-        $stmt-> bindParam(':nickname', $_POST['nickname']);
-        $password = password_hash($_POST['password'], PASSWORD_BCRYPT);
-        $stmt->bindParam(':password', $password);
+    if(!empty($_POST['email']) && !empty($_POST['password']) && !empty($_POST['nickname']) && empty($exist)){
+        if($_POST['password'] == $_POST['confirm_password']){
+            $sql = "INSERT INTO users (email, password, nickname) VALUES (:email, :password, :nickname)";
+            $stmt = $conn->prepare($sql);
+            $stmt-> bindParam(':email', $_POST['email']);
+            $stmt-> bindParam(':nickname', $_POST['nickname']);
+            $password = password_hash($_POST['password'], PASSWORD_BCRYPT);
+            $stmt->bindParam(':password', $password);
 
-        if($stmt->execute()){
-            $message = 'El usuario fue creado!';
+            if($stmt->execute()){
+                session_start();
+                $_SESSION['user_id'] = selectUser($conn, $_POST['email']);
+
+                if(!empty($_SESSION['user_id'])){
+                    header('Location: ../php-login');
+                }
+
+            }
+            else{
+                $message = 'Error al crear el usuario!';
+            }
+        }else{
+            $message = 'Las contraseñas no coinciden';
         }
-        else{
-            $message = 'Error al crear el usuario!';
-        }
+    }elseif(!empty($_POST['email'])){
+        $message = 'El email ya existe';
     }
 ?>
 
@@ -43,11 +59,11 @@
             <input type="text" name="nickname" placeholder="Ingrese su nombre de usuario">
             <input type="text" name="email" placeholder="Ingrese su email">
             <input type="password" name="password" placeholder="Ingrese su contraseña">
-            <input type="password" name="_confirm_password" placeholder="Confirme su contraseña">
+            <input type="password" name="confirm_password" placeholder="Confirme su contraseña">
             <input type="submit" value="Crear usuario">
             <a href="../php-login/login.php"><input type="button" value="Entrar"></a>
 			<?php if(!empty($message)): ?>
-                <div class="mensaje"><?= $message ?></div>
+                <p><span><?= $message ?></span></p>
 			<?php endif; ?>
         </form>
     </body>

@@ -125,6 +125,8 @@ window.initMap = initMap;
         map.setZoom(15);
         map.setCenter({lat: latitude, lng: longitude});
 
+        window.location.href = "#map";
+
 
     });
 
