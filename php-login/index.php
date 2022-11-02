@@ -25,7 +25,7 @@
         <meta charset="UTF-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-		<title>Ubitec</title>
+		<title>UBITEC</title>
 		<link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href=" https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;1,700&display=swap" rel="stylesheet">
@@ -50,8 +50,8 @@
 			<a href="history.php"><button class="historial">Historial</button></a>
 			<a href="./partials/account.php"><button class="account">Mi cuenta</button></a>
 
-				<div class="cajados">
-					<form method="post">
+				<div class="cajados top" >
+					<form method="post" >
 						<?php
 							//evalua si la ruta de inicio fue ingresada
 							if(empty($_SESSION['startEnd']['ruta_inicio'])):
@@ -64,8 +64,10 @@
 							//evalua si esta vacia la ruta final para pedir que sea ingresada (corregir boton añadir)
 							if(empty($_SESSION['startEnd']['ruta_final']) && !empty($_SESSION['startEnd']['ruta_inicio'])):
 						?>
+						<div>
 							<input type="text" id="search_input" name="searchEnd"  placeholder="Ingrese direccion final">
 							<input type="submit" id="add_end" value="Añadir">
+						</div>
 						<?php
 							//evalua si estan ambas rutas ingresadas para pedir las direcciones
 							elseif(!empty($_SESSION['startEnd']['ruta_final']) && !empty($_SESSION['startEnd']['ruta_inicio'])):
@@ -153,7 +155,7 @@
 			<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=places&key=AIzaSyDGc0UBAR_Y30fX31EvaU65KATMx0c0ItI&callback=initMap&v=weekly"></script>
 			<!-- llama a la pagina de inicio si el usuario no entro -->
 
-		<?php require './partials/footer.php'; else: header('Location: ./partials/startPage.php');?>
+		<?php  else: header('Location: ./partials/startPage.php');?>
 
         <?php endif ?>
         <!--Reloj v1, solo se activa al cargar la pagina

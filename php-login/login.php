@@ -44,7 +44,7 @@
             <input type="text" name="email" placeholder="Ingrese su email">
             <input type="password" name="password" placeholder="Ingrese su contraseña">
             <input type="submit" value="Entrar">
-            <a href="./signup.php"><input type="button" value="Registrarse"></a>
+            <a href="./index.php"><input type="button" value="volver"></a>
             </br>
             <?php if(!empty($message)): ?>
                 <p><?= $message ?></p>

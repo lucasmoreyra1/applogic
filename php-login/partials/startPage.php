@@ -11,7 +11,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Krub:wght@400;700&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" type="text/css" href="../assets/css/styleStart.css">
-    <title>Document</title>
+    <title>UBITEC</title>
 </head>
 <body>
     <?php require 'header.php'; ?>

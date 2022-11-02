@@ -240,6 +240,16 @@ table label input:checked ~ .check:after {
 	border-radius: 10px;
 	box-sizing: border-box;
 }
+
+.top{
+	top: .1px;
+	position: sticky;
+	display: block;
+	z-index: 3;
+}
+
+
+
 @keyframes animate{
 	0% {color: #8a9597;}
 	33% {color: #191919;}
