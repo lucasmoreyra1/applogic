@@ -32,7 +32,7 @@ header span{
 	font-size: 18px;
 	background-color: red;
 	border-radius: 10px;
-	margin: 2% 2% 0% 0%;
+	margin: 40px 2% 0% 0%;
 	padding: 14px;
 	border: 0px;
 }
@@ -42,10 +42,10 @@ header span{
 	transition: .3s;
 }
 .historial{
-	right: 8%;
+	right: 110px;
 }
 .account {
-	right: 16%;
+	right: 220px;
 }
 h1 {
 	padding: 0% 0% 4% 0%;
@@ -112,11 +112,12 @@ input[type="submit"]:hover, input[type="button"]:hover {
 	padding: 14px 0%;
 	margin: 0%;
 }
-#add:hover, #submit:hover, #add_end:hover #add_start:hover, .cajatres input:hover, .eliminar input:hover, #delete:hover, #new:hover {
+#add:hover, #submit:hover, #add_end:hover, #add_start:hover, .cajatres input:hover, .eliminar input:hover, #delete:hover, #new:hover {
 	background-color: #a30000;
 }
 .cajatres{
-	width: 96%;
+	display: inline-block;
+	width: 46.9%;
 	background-color: #080404c7;
 	color: #fff;
 	margin: 0% 0% 2% 2%;
@@ -152,15 +153,15 @@ input[type="submit"]:hover, input[type="button"]:hover {
 	border-radius: 6px;
 	box-sizing: border-box;
 	height: 550px;
-	width: 51%;
+	width: 49%;
 }
 #submit {
-	width: 47%;
+	width: 49%;
 	margin: 0 0 2% 2%;
 	background-color: red;
 }
 table {
-	width: 47%;
+	width: 49%;
 	margin: 0% 0% 2% 2%;
 	background-color: #e1e4e5;
 	font-weight: bold;
@@ -226,11 +227,11 @@ table label input:checked ~ .check:after {
 }
 #delete, #new{
 	background-color: red;
-	width: 47%;
+	width: 49%;
 	margin: 0 0% 2% 2%;
 }
 #directions-panel {
-	width: 47%;
+	width: 49%;
 	margin-left: 2%;
 	padding: 12px;
 	float: left;
@@ -310,7 +311,7 @@ table label input:checked ~ .check:after {
 	}
 	.historial {
 		padding: 10px;
-		margin: 5% 21% 0% 0%;
+		margin: 5% 0 0% 0%;
 	}
 	.account{
 		display: none;
@@ -336,7 +337,7 @@ table label input:checked ~ .check:after {
 	}
 	.cajados input[type="text"] {
 		width: 70%;
-		padding: 11px;
+		padding: 10px;
 		margin: 3%;
 	}
 	#add , #add_start, #add_end {
@@ -346,6 +347,7 @@ table label input:checked ~ .check:after {
 		font-size: 18px;
 	}
 	.cajatres {
+		display: block;
 		width: 94%;
 		margin: 10px auto;
 		padding: 15px;
@@ -364,11 +366,11 @@ table label input:checked ~ .check:after {
 		box-sizing: border-box;
 		width: 94%;
 		height: 450px;
-		margin: 10px auto;
+		margin: 0px auto;
 	}
 	#submit {
 		width: 94%;
-		margin: 0px 3%;
+		margin: 10px 3% 0 3%;
 	}
 	table {
 		width: 94%;
@@ -376,8 +378,15 @@ table label input:checked ~ .check:after {
 		margin: 10px auto;
 	}
 	.check {
-		position: absolute;
 		left: 92%;
+	}
+	#delete {
+		width: 44%;
+		margin: 0 2% 0 4%;
+	}
+	#new {
+		width: 44.8%;
+		margin: 0 4% 0 0;
 	}
 	#directions-panel {
 		width: 94%;
