@@ -141,6 +141,7 @@
 						<form method="POST">
 							<input type="submit" id="delete" name="delete" value="Eliminar todo" />
 							<input type="submit" id="new" name="new" value="Nueva Ruta" />
+							<input type="submit" onclick="exportToCsv()" value="Descargar en Exel" />
 						</form>
 
 						<div id="directions-panel"><strong>Rutas ordenadas</strong></div>

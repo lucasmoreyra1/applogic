@@ -35,6 +35,7 @@
   //
 
 }
+var toExel = [];
 
 function calculateAndDisplayRoute(directionsService, directionsRenderer) {
   const waypts = [];
@@ -75,12 +76,35 @@ function calculateAndDisplayRoute(directionsService, directionsRenderer) {
         summaryPanel.innerHTML += route.legs[i].start_address.substr(0,30) + "..." + " <strong>Hacia </strong> ";
         summaryPanel.innerHTML += route.legs[i].end_address.substr(0,33) + "..." + "<br>";
         summaryPanel.innerHTML += route.legs[i].distance.text + "<br><br>";
+
+        toExel.push(route.legs[i].end_address);
       }
     })
     .catch((e) => window.alert("Directions request failed due to " + status));
 }
 
+    // Solution 2, Without FileSaver.js
+    var Results = [toExel];
+    exportToCsv = function() {
+      var CsvString = "";
+      Results.forEach(function(RowItem, RowIndex) {
+        RowItem.forEach(function(ColItem, ColIndex) {
+          ColItem = ColItem.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+          CsvString += ColItem + ",";
+          CsvString += "\r\n";
+        });
+
+      });
+      CsvString = "data:application/vnd.ms-excel;charset=utf-8," + encodeURIComponent(CsvString);
+      var x = document.createElement("A");
+      x.setAttribute("href", CsvString);
+      x.setAttribute("download", "Rutas.xls");
+      document.body.appendChild(x);
+      x.click();
+    };
+
 window.initMap = initMap;
+
 
 
 </script>
